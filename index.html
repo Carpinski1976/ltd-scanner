@@ -18,8 +18,6 @@
   --font:'Inter',sans-serif;--mono:'JetBrains Mono',monospace
 }
 body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh}
-
-/* HEADER */
 .header{background:linear-gradient(135deg,#0d1b2a,#0a1628);border-bottom:1px solid var(--border);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .logo{display:flex;align-items:center;gap:10px}
 .logo-icon{width:36px;height:36px;background:var(--green);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:20px}
@@ -27,68 +25,46 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .logo-sub{font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.07em}
 .live-badge{display:flex;align-items:center;gap:6px;background:var(--rdim);border:1px solid rgba(255,82,82,.3);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:600;color:var(--red)}
 .dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:pulse 1.4s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
-
-/* STATS BAR */
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .stats-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;gap:16px;overflow-x:auto;align-items:center}
 .stat{display:flex;flex-direction:column;gap:2px;min-width:fit-content}
 .sv{font-family:var(--mono);font-size:20px;font-weight:500}
-.sv.g{color:var(--green)}.sv.a{color:var(--amber)}.sv.b{color:var(--blue)}.sv.r{color:var(--red)}
+.sv.g{color:var(--green)}.sv.a{color:var(--amber)}.sv.r{color:var(--red)}
 .sl{font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.06em}
 .sdiv{width:1px;background:var(--border);align-self:stretch;height:32px;flex-shrink:0}
-
-/* DATE PICKER */
 .date-wrap{display:flex;align-items:center;gap:6px;margin-left:auto;flex-shrink:0}
-.date-lbl{font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
-.dnav{background:transparent;border:1px solid var(--border);color:var(--t2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0}
+.dnav{background:transparent;border:1px solid var(--border);color:var(--t2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .15s}
 .dnav:hover{border-color:rgba(255,255,255,.25);color:var(--text)}
 .date-inp{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:5px 10px;color:var(--text);font-family:var(--mono);font-size:12px;outline:none;cursor:pointer;width:130px}
-.date-inp:focus{border-color:rgba(79,195,247,.4)}
-.today-btn{background:var(--gdim);border:1px solid rgba(0,230,118,.3);color:var(--green);font-family:var(--font);font-size:10px;font-weight:600;padding:4px 10px;border-radius:6px;cursor:pointer;white-space:nowrap}
-
-/* FILTERS */
-.filters{padding:10px 20px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--border);background:var(--bg)}
+.today-btn{background:var(--gdim);border:1px solid rgba(0,230,118,.3);color:var(--green);font-family:var(--font);font-size:10px;font-weight:600;padding:4px 10px;border-radius:6px;cursor:pointer}
+.filters{padding:10px 20px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--border)}
 .fl{font-size:11px;color:var(--t2)}
 .fbtn{font-size:11px;font-family:var(--font);border:1px solid var(--border);background:transparent;color:var(--t2);padding:5px 14px;border-radius:20px;cursor:pointer;transition:all .15s}
 .fbtn.active{background:var(--gdim);border-color:rgba(0,230,118,.4);color:var(--green);font-weight:500}
-.fbtn:hover:not(.active){border-color:rgba(255,255,255,.2);color:var(--text)}
 .league-filter{margin-left:auto;font-size:11px;background:var(--bg3);border:1px solid var(--border);color:var(--t2);padding:5px 10px;border-radius:8px;font-family:var(--font);outline:none;cursor:pointer}
-
-/* MAIN */
 .main{padding:16px 20px;max-width:960px;margin:0 auto}
-
-/* RESUMO */
 .resumo-box{background:var(--bg2);border:1px solid rgba(79,195,247,.2);border-radius:12px;padding:14px 16px;margin-bottom:16px;display:none}
 .resumo-hdr{display:flex;align-items:center;gap:8px;margin-bottom:6px}
 .resumo-t{font-size:11px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.06em}
 .resumo-c{font-size:12px;color:var(--t2);line-height:1.7}
 .resumo-c strong{color:var(--text);font-weight:600}
-
-/* LOADING */
 .loading{text-align:center;padding:50px 20px;display:none}
 .spinner{width:36px;height:36px;border:2px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .ltxt{font-size:14px;color:var(--text);margin-bottom:4px;font-weight:500}
 .lsub{font-size:11px;color:var(--t2);margin-bottom:14px}
-.lsteps{display:flex;flex-direction:column;gap:6px;text-align:left;max-width:280px;margin:0 auto}
+.lsteps{display:flex;flex-direction:column;gap:6px;text-align:left;max-width:300px;margin:0 auto}
 .lstep{font-size:11px;color:var(--t3);padding:4px 0;border-bottom:1px solid var(--border)}
 .lstep:last-child{border:none}
-.lstep.done{color:var(--green)}
-.lstep.cur{color:var(--amber)}
-
-/* SECTION */
+.lstep.done{color:var(--green)}.lstep.cur{color:var(--amber)}
 .sec-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
 .sec-t{font-size:11px;font-weight:600;color:var(--t2);text-transform:uppercase;letter-spacing:.08em}
 .sec-c{font-size:11px;color:var(--t3)}
-
-/* GAME CARD */
 .gc{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:border-color .2s,transform .15s}
 .gc:hover{border-color:rgba(255,255,255,.12);transform:translateY(-1px)}
 .gc.go{border-left:3px solid var(--green)}
 .gc.watch{border-left:3px solid var(--amber)}
 .gc.skip{border-left:3px solid var(--red);opacity:.5}
-
-/* CARD TOP */
 .ct{padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
 .lgi{display:flex;flex-direction:column;gap:2px;min-width:fit-content}
 .lgn{font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
@@ -102,11 +78,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .vwa{background:var(--adim);color:var(--amber);border:1px solid rgba(255,179,0,.3)}
 .vsk{background:var(--rdim);color:var(--red);border:1px solid rgba(255,82,82,.3)}
 .sc{font-family:var(--mono);font-size:11px;color:var(--t2)}
-
-/* METRICS */
-.mets{padding:0 16px 12px;display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
-@media(max-width:600px){.mets{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:400px){.mets{grid-template-columns:repeat(2,1fr)}}
+.mets{padding:0 16px 12px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+@media(max-width:600px){.mets{grid-template-columns:repeat(2,1fr)}}
 .mb{background:var(--bg3);border-radius:8px;padding:8px 10px;border:1px solid var(--border)}
 .mb.pass{border-color:rgba(0,230,118,.3);background:var(--gdim)}
 .mb.fail{border-color:rgba(255,82,82,.25);background:var(--rdim)}
@@ -115,46 +88,21 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .mbv{font-family:var(--mono);font-size:13px;font-weight:500}
 .mb.pass .mbv{color:var(--green)}.mb.fail .mbv{color:var(--red)}.mb.warn .mbv{color:var(--amber)}
 .mb:not(.pass):not(.fail):not(.warn) .mbv{color:var(--text)}
-
-/* EXTRA ROW */
-.extra-row{padding:0 16px 10px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
-@media(max-width:500px){.extra-row{grid-template-columns:1fr}}
-.ei{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:8px 10px}
-.ei-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--t2);margin-bottom:4px}
-.ei-val{font-size:11px;color:var(--text);line-height:1.5}
-.ei-val.green{color:var(--green)}.ei-val.amber{color:var(--amber)}.ei-val.red{color:var(--red)}
-
-/* FORM DOTS */
-.form-dots{display:flex;gap:3px;margin-top:4px}
-.fd{width:10px;height:10px;border-radius:50%;font-size:0}
-.fd.W{background:var(--green)}.fd.D{background:var(--amber)}.fd.L{background:var(--red)}.fd.u{background:var(--t3)}
-
-/* CRITS */
 .crits{padding:0 16px 10px;display:flex;gap:6px;flex-wrap:wrap}
 .crit{display:flex;align-items:center;gap:4px;font-size:10px;padding:3px 9px;border-radius:20px;background:var(--bg3)}
 .crit.ok{color:var(--green);border:1px solid rgba(0,230,118,.2)}
 .crit.no{color:var(--red);border:1px solid rgba(255,82,82,.2)}
 .crit.wa{color:var(--amber);border:1px solid rgba(255,179,0,.2)}
-
-/* INJ */
-.inj-row{padding:0 16px 10px;font-size:10px;color:var(--red);line-height:1.7}
-
-/* ANAL */
 .anal{margin:0 16px 14px;background:var(--bg3);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--t2);line-height:1.6;border:1px solid var(--border)}
 .anal strong{color:var(--text);font-weight:500}
-
-/* ERROR */
-.errbox{background:var(--rdim);border:1px solid rgba(255,82,82,.3);border-radius:10px;padding:14px 16px;margin-bottom:16px;font-size:12px;color:var(--red);line-height:1.6;display:none}
-
-/* REFRESH */
+.errbox{background:var(--rdim);border:1px solid rgba(255,82,82,.3);border-radius:10px;padding:14px 16px;margin-bottom:16px;font-size:12px;color:var(--red);line-height:1.7;display:none}
 .rwrap{text-align:center;margin-top:24px;padding-bottom:8px}
-.rbtn{display:inline-flex;align-items:center;gap:8px;background:var(--gdim);border:1px solid rgba(0,230,118,.3);color:var(--green);font-family:var(--font);font-size:12px;font-weight:600;padding:10px 24px;border-radius:8px;cursor:pointer;transition:all .15s}
-.rbtn:hover{background:rgba(0,230,118,.2)}
+.rbtn{display:inline-flex;align-items:center;gap:8px;background:var(--gdim);border:1px solid rgba(0,230,118,.3);color:var(--green);font-family:var(--font);font-size:12px;font-weight:600;padding:10px 24px;border-radius:8px;cursor:pointer}
 .ts{font-size:10px;color:var(--t3);margin-top:8px;font-family:var(--mono)}
 .games-sec{display:none}
 .empty{display:none;text-align:center;padding:50px 20px;color:var(--t2)}
 .footer{text-align:center;padding:20px;font-size:10px;color:var(--t3);border-top:1px solid var(--border);margin-top:20px;line-height:1.9}
-.req-counter{font-size:10px;color:var(--t3);text-align:right;margin-bottom:8px;font-family:var(--mono)}
+.req-info{font-size:10px;color:var(--t3);text-align:right;margin-bottom:8px;font-family:var(--mono)}
 </style>
 </head>
 <body>
@@ -179,7 +127,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
   <div class="sdiv"></div>
   <div class="stat"><div class="sv" id="sT">—</div><div class="sl">Total</div></div>
   <div class="date-wrap">
-    <span class="date-lbl">📅</span>
     <button class="dnav" onclick="changeDate(-1)">‹</button>
     <input class="date-inp" type="date" id="datePicker" onchange="init()">
     <button class="dnav" onclick="changeDate(1)">›</button>
@@ -207,23 +154,22 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
   <div id="loading" class="loading">
     <div class="spinner"></div>
     <div class="ltxt">Buscando dados...</div>
-    <div class="lsub">API-Football · Dados em tempo real</div>
+    <div class="lsub">API-Football via proxy seguro</div>
     <div class="lsteps">
-      <div class="lstep" id="s1">⏳ Buscando fixtures do dia...</div>
+      <div class="lstep" id="s1">⏳ Buscando jogos do dia...</div>
       <div class="lstep" id="s2">⏳ Carregando odds (empate + Over 2.5)...</div>
-      <div class="lstep" id="s3">⏳ Buscando estatísticas e forma...</div>
-      <div class="lstep" id="s4">⏳ Aplicando filtros LTD...</div>
+      <div class="lstep" id="s3">⏳ Aplicando filtros LTD...</div>
     </div>
   </div>
   <div id="gamesSec" class="games-sec">
-    <div class="req-counter" id="reqCounter"></div>
+    <div class="req-info" id="reqInfo"></div>
     <div class="sec-hdr">
       <span class="sec-t" id="secTitle">Jogos</span>
       <span class="sec-c" id="gCount"></span>
     </div>
     <div id="gList"></div>
     <div class="rwrap">
-      <button class="rbtn" onclick="init()">🔄 Atualizar dados</button>
+      <button class="rbtn" onclick="init()">🔄 Atualizar</button>
       <div class="ts" id="ts"></div>
     </div>
   </div>
@@ -236,20 +182,18 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 
 <div class="footer">
   LTD Scanner · Carpinski Trader · Lay do Empate<br>
-  Dados: API-Football (RapidAPI) · Critérios: Odd empate 3.0–4.5 · Over 2.5 &lt; 2.0<br>
+  Critérios LTD: Odd empate 3.0–4.5 · Over 2.5 &lt; 2.0<br>
   Use com responsabilidade · Análises não garantem resultado
 </div>
 
 <script>
-const KEY = 'd0437d9facda56da1221c136c4787e2';
-const HOST = 'v3.football.api-sports.io';
+const API_KEY = 'd0437d9facda56da1221c136c4787e2d';
+// Proxy público para contornar CORS da API-Football
+const PROXY = 'https://corsproxy.io/?';
+const API_BASE = 'https://v3.football.api-sports.io';
+
 let all = [], cf = 'all', reqCount = 0;
 
-// Ligas monitoradas
-const LIGAS = [39,140,135,78,61,2,3,71,13,15];
-const LIGA_NAMES = {39:'Premier League 🏴󠁧󠁢󠁥󠁮󠁧󠁿',140:'La Liga 🇪🇸',135:'Serie A 🇮🇹',78:'Bundesliga 🇩🇪',61:'Ligue 1 🇫🇷',2:'Champions League 🏆',3:'Europa League 🏆',71:'Brasileirão 🇧🇷',13:'Libertadores 🏆',15:'Copa do Mundo 🌍'};
-
-// Date picker
 const dp = document.getElementById('datePicker');
 const todayStr = new Date().toISOString().split('T')[0];
 dp.value = todayStr;
@@ -263,7 +207,7 @@ function changeDate(d){
 function goToday(){ dp.value = todayStr; init(); }
 
 function step(n){
-  for(let i=1;i<=4;i++){
+  for(let i=1;i<=3;i++){
     const el=document.getElementById('s'+i);
     if(!el) continue;
     el.className = i<n?'lstep done':i===n?'lstep cur':'lstep';
@@ -272,11 +216,16 @@ function step(n){
 
 async function apiFetch(path){
   reqCount++;
-  document.getElementById('reqCounter').textContent = `Requests usados hoje: ${reqCount}/100`;
-  const r = await fetch('https://'+HOST+path,{
-    headers:{'x-apisports-key':KEY}
+  document.getElementById('reqInfo').textContent = `Requests usados: ${reqCount}/100`;
+  const url = PROXY + encodeURIComponent(API_BASE + path);
+  const r = await fetch(url, {
+    headers: {
+      'x-apisports-key': API_KEY,
+      'x-rapidapi-key': API_KEY,
+      'x-rapidapi-host': 'v3.football.api-sports.io'
+    }
   });
-  if(!r.ok) throw new Error('Erro API '+r.status);
+  if(!r.ok) throw new Error('Erro '+r.status);
   return r.json();
 }
 
@@ -292,81 +241,73 @@ async function init(){
   document.getElementById('errBox').style.display='none';
   document.getElementById('empty').style.display='none';
   ['sA','sW','sS','sT'].forEach(id=>document.getElementById(id).textContent='—');
-  reqCount = 0; all = [];
-
-  document.getElementById('secTitle').textContent = isToday ? 'Jogos de hoje — '+dateLbl : 'Jogos de '+dateLbl;
+  reqCount=0; all=[];
+  document.getElementById('secTitle').textContent = isToday?'Jogos de hoje — '+dateLbl:'Jogos de '+dateLbl;
 
   try {
     // 1. Buscar fixtures
     step(1);
     const fx = await apiFetch('/fixtures?date='+dateStr);
-    const fixtures = (fx.response||[]).filter(f=>{
-      const lid = f.league?.id;
-      return LIGAS.includes(lid);
-    });
+    const allFix = fx.response || [];
+
+    // Filtrar ligas relevantes (excluir sub, feminino, amador)
+    const fixtures = allFix.filter(f => {
+      const name = (f.league?.name||'').toLowerCase();
+      const excl = ['u18','u19','u20','u21','u23','u17','reserve','women','feminino','amateur','youth','juven'];
+      return !excl.some(e => name.includes(e));
+    }).slice(0,40);
 
     if(fixtures.length===0){
       document.getElementById('loading').style.display='none';
       document.getElementById('resumoBox').style.display='block';
-      document.getElementById('resumoC').innerHTML = `Nenhum jogo nas ligas monitoradas em <strong>${dateLbl}</strong>. Tente outra data.`;
+      document.getElementById('resumoC').innerHTML=`Nenhum jogo encontrado para <strong>${dateLbl}</strong>. Tente outra data.`;
       return;
     }
 
     // 2. Buscar odds
     step(2);
     const oddsMap = {};
-    // Busca odds de cada liga monitorada para a data
-    for(const lid of LIGAS){
-      try {
-        const od = await apiFetch('/odds?date='+dateStr+'&league='+lid+'&season=2025&bookmaker=8');
-        for(const item of (od.response||[])){
-          const fid = item.fixture?.id;
-          if(!fid) continue;
-          let oddDraw=null, oddOver25=null;
-          for(const bk of (item.bookmakers||[])){
-            for(const bet of (bk.bets||[])){
-              if(bet.name==='Match Winner'){
-                for(const v of (bet.values||[])){
-                  if(v.value==='Draw') oddDraw=parseFloat(v.odd);
-                }
-              }
-              if(bet.name==='Goals Over/Under'){
-                for(const v of (bet.values||[])){
-                  if(v.value==='Over 2.5') oddOver25=parseFloat(v.odd);
-                }
+
+    // Odds de empate (bet id 1 = Match Winner)
+    try {
+      const od1 = await apiFetch('/odds?date='+dateStr+'&bet=1');
+      for(const item of (od1.response||[])){
+        const fid = item.fixture?.id;
+        if(!fid) continue;
+        for(const bk of (item.bookmakers||[])){
+          for(const bet of (bk.bets||[])){
+            for(const v of (bet.values||[])){
+              if(v.value==='Draw'){
+                if(!oddsMap[fid]) oddsMap[fid]={};
+                if(!oddsMap[fid].draw) oddsMap[fid].draw=parseFloat(v.odd);
               }
             }
           }
-          oddsMap[fid]={oddDraw,oddOver25};
         }
-      } catch(e){ continue; }
-    }
+      }
+    } catch(e){}
 
-    // 3. Buscar forma dos times
+    // Odds Over/Under (bet id 5)
+    try {
+      const od2 = await apiFetch('/odds?date='+dateStr+'&bet=5');
+      for(const item of (od2.response||[])){
+        const fid = item.fixture?.id;
+        if(!fid) continue;
+        for(const bk of (item.bookmakers||[])){
+          for(const bet of (bk.bets||[])){
+            for(const v of (bet.values||[])){
+              if(v.value==='Over 2.5'){
+                if(!oddsMap[fid]) oddsMap[fid]={};
+                if(!oddsMap[fid].over25) oddsMap[fid].over25=parseFloat(v.odd);
+              }
+            }
+          }
+        }
+      }
+    } catch(e){}
+
+    // 3. Processar e aplicar filtros LTD
     step(3);
-    const formMap = {};
-    const teamIds = [...new Set(fixtures.flatMap(f=>[f.teams?.home?.id, f.teams?.away?.id].filter(Boolean)))].slice(0,20);
-    for(const tid of teamIds){
-      try {
-        const st = await apiFetch('/teams/statistics?team='+tid+'&season=2025&league='+
-          (fixtures.find(f=>f.teams?.home?.id===tid||f.teams?.away?.id===tid)?.league?.id||39));
-        const s = st.response;
-        if(!s) continue;
-        const played = s.fixtures?.played?.total||0;
-        const goals = s.goals?.for?.total?.total||0;
-        const goalsAgainst = s.goals?.against?.total?.total||0;
-        const form = s.form||'';
-        formMap[tid]={
-          avgFor: played>0?(goals/played).toFixed(1):'—',
-          avgAgainst: played>0?(goalsAgainst/played).toFixed(1):'—',
-          form: form.slice(-5),
-          played
-        };
-      } catch(e){ continue; }
-    }
-
-    // 4. Processar
-    step(4);
     const processados = [];
 
     for(const f of fixtures){
@@ -374,89 +315,68 @@ async function init(){
       const home = f.teams?.home?.name||'?';
       const away = f.teams?.away?.name||'?';
       const league = f.league?.name||'Liga';
-      const leagueId = f.league?.id;
+      const leagueId = f.league?.id||0;
       const country = f.league?.country||'';
       const status = f.fixture?.status?.short||'NS';
       const startUTC = f.fixture?.date;
-      const hrBrasil = startUTC ? new Date(startUTC).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'}) : '—';
+      const hrBrasil = startUTC ? new Date(startUTC).toLocaleTimeString('pt-BR',{
+        hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'
+      }) : '—';
 
-      const homeId = f.teams?.home?.id;
-      const awayId = f.teams?.away?.id;
+      const hg = f.goals?.home;
+      const ag = f.goals?.away;
+      const scoreStr = (hg!==null&&hg!==undefined) ? `${hg} - ${ag}` : null;
+
       const odds = oddsMap[fid]||{};
-      const homeForm = formMap[homeId]||{};
-      const awayForm = formMap[awayId]||{};
-
-      const oddDraw = odds.oddDraw||0;
-      const oddOver25 = odds.oddOver25||0;
-
-      // Média gols combinada
-      const homeAvg = parseFloat(homeForm.avgFor)||0;
-      const awayAvg = parseFloat(awayForm.avgFor)||0;
-      const totalAvg = homeAvg + awayAvg;
+      const oddDraw = odds.draw||0;
+      const oddOver25 = odds.over25||0;
 
       // Critérios LTD
       const oddOk = oddDraw>=3.0 && oddDraw<=4.5;
       const over25Ok = oddOver25>0 && oddOver25<2.0;
-      const goalsOk = totalAvg>=2.0;
 
-      // Score
       let score=0;
-      if(oddOk) score+=35;
-      if(over25Ok) score+=30;
-      if(goalsOk) score+=20;
-      if(oddDraw>0&&oddOver25>0) score+=15;
+      if(oddOk) score+=40;
+      if(over25Ok) score+=35;
+      if(oddDraw>0&&oddOver25>0) score+=25;
 
-      // Verdict
       let verdict='SKIP';
       if(oddOk&&over25Ok) verdict='GO';
-      else if((oddOk||over25Ok)&&oddDraw>0) verdict='WATCH';
-      else if(oddDraw===0&&oddOver25===0) verdict='WATCH'; // sem odds ainda
+      else if(oddOk||over25Ok) verdict='WATCH';
+      else if(oddDraw===0) verdict='WATCH';
 
-      // Análise
       let analise='';
       if(verdict==='GO'){
-        analise=`✅ Passa em todos os critérios LTD! Odd empate ${oddDraw.toFixed(2)} (faixa ideal 3.0–4.5) e Over 2.5 @${oddOver25.toFixed(2)}. Média de gols combinada ${totalAvg.toFixed(1)} por jogo. Entrada recomendada pré-live.`;
+        analise=`✅ Passa em todos os critérios LTD! Odd empate ${oddDraw.toFixed(2)} (faixa 3.0–4.5) e Over 2.5 @${oddOver25.toFixed(2)}. Entrada recomendada pré-live.`;
       } else if(oddOk&&!over25Ok&&oddOver25>0){
-        analise=`⚠️ Odd empate ok (${oddDraw.toFixed(2)}), mas Over 2.5 @${oddOver25.toFixed(2)} sugere jogo mais fechado. Acompanhe os primeiros 15 min ao vivo antes de entrar.`;
+        analise=`⚠️ Odd empate ok (${oddDraw.toFixed(2)}), mas Over 2.5 @${oddOver25.toFixed(2)} indica jogo mais fechado. Observe ao vivo antes de entrar.`;
       } else if(!oddOk&&over25Ok){
-        analise=`⚠️ Over 2.5 favorável @${oddOver25.toFixed(2)}, mas odd empate ${oddDraw.toFixed(2)} fora da faixa 3.0–4.5. ${oddDraw>0&&oddDraw<3.0?'Exposição muito alta — evite.':'Empate muito improvável para o mercado.'}`;
+        analise=`⚠️ Over 2.5 favorável @${oddOver25.toFixed(2)}, mas odd empate ${oddDraw.toFixed(2)} fora da faixa ideal 3.0–4.5.`;
       } else if(oddDraw===0){
-        analise=`⏳ Odds ainda não disponíveis. Verifique 1–2h antes do jogo ou consulte diretamente na sua exchange.`;
+        analise=`⏳ Odds ainda não disponíveis para este jogo. Consulte na sua exchange 1–2h antes.`;
       } else {
-        analise=`❌ Não passa nos critérios LTD. Odd empate ${oddDraw.toFixed(2)}, Over 2.5 @${oddOver25.toFixed(2)||'—'}. Pular este jogo.`;
+        analise=`❌ Não passa nos critérios. Odd empate ${oddDraw.toFixed(2)}, Over 2.5 @${oddOver25||'—'}. Pular.`;
       }
 
       processados.push({
-        fid,home,away,league,leagueId,country,hrBrasil,status,
+        fid,home,away,league,leagueId,country,hrBrasil,status,scoreStr,
         oddDraw:oddDraw>0?oddDraw.toFixed(2):'—',
         oddOver25:oddOver25>0?oddOver25.toFixed(2):'—',
-        homeAvg:homeForm.avgFor||'—',
-        awayAvg:awayForm.avgFor||'—',
-        homeAvgAgainst:homeForm.avgAgainst||'—',
-        awayAvgAgainst:awayForm.avgAgainst||'—',
-        homeForm:homeForm.form||'',
-        awayForm:awayForm.form||'',
-        totalAvg:totalAvg.toFixed(1),
         verdict,score,analise,
-        criterios:{odd_ok:oddOk,over25_ok:over25Ok,goals_ok:goalsOk}
+        criterios:{odd_ok:oddOk,over25_ok:over25Ok}
       });
     }
 
     all = processados.sort((a,b)=>b.score-a.score);
 
-    // Atualizar league filter
+    // Atualizar filtro de liga
     const lf = document.getElementById('leagueFilter');
-    const curVal = lf.value;
     lf.innerHTML='<option value="all">Todas as ligas</option>';
-    const ligas = [...new Set(all.map(g=>g.league))].sort();
-    ligas.forEach(l=>{
+    [...new Set(all.map(g=>g.league))].sort().forEach(l=>{
       const o=document.createElement('option');
-      o.value=l; o.textContent=l;
-      if(l===curVal) o.selected=true;
-      lf.appendChild(o);
+      o.value=l; o.textContent=l; lf.appendChild(o);
     });
 
-    // Stats
     const go=all.filter(g=>g.verdict==='GO').length;
     const watch=all.filter(g=>g.verdict==='WATCH').length;
     const skip=all.filter(g=>g.verdict==='SKIP').length;
@@ -465,21 +385,18 @@ async function init(){
     document.getElementById('sS').textContent=skip;
     document.getElementById('sT').textContent=all.length;
 
-    // Resumo
     document.getElementById('resumoBox').style.display='block';
     const rc=document.getElementById('resumoC');
     if(go>0){
       const best=all.filter(g=>g.verdict==='GO')[0];
-      rc.innerHTML=`<strong>${go} jogo(s) ✅ aprovado(s)</strong> para LTD em ${dateLbl}. Melhor oportunidade: <strong>${best.home} × ${best.away}</strong> (${best.league}) — odd empate ${best.oddDraw}, Over 2.5 @${best.oddOver25}. Score ${best.score}/100.`;
+      rc.innerHTML=`<strong>${go} jogo(s) ✅ aprovado(s)</strong> para LTD em ${dateLbl}. Melhor: <strong>${best.home} × ${best.away}</strong> (${best.league}) — empate @${best.oddDraw}, Over 2.5 @${best.oddOver25}. Score ${best.score}/100.`;
     } else if(watch>0){
-      rc.innerHTML=`Nenhum jogo com <strong>todos os critérios</strong> em ${dateLbl}. <strong>${watch} para observar</strong> — acompanhe ao vivo antes de entrar.`;
-    } else if(all.length===0){
-      rc.innerHTML=`Nenhum jogo encontrado para ${dateLbl}.`;
+      rc.innerHTML=`Nenhum com <strong>todos os critérios</strong> em ${dateLbl}. <strong>${watch} para observar</strong> ao vivo.`;
     } else {
-      rc.innerHTML=`<strong>${all.length} jogos</strong> analisados em ${dateLbl}. Nenhum passa nos critérios LTD — melhor não operar.`;
+      rc.innerHTML=`<strong>${all.length} jogos</strong> analisados em ${dateLbl}. Nenhum passa nos critérios LTD.`;
     }
 
-    document.getElementById('ts').textContent='Atualizado às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})+' · '+reqCount+' requests usados';
+    document.getElementById('ts').textContent='Atualizado '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})+' · '+reqCount+' req usados';
     document.getElementById('loading').style.display='none';
     renderFiltered();
 
@@ -488,7 +405,7 @@ async function init(){
     const eb=document.getElementById('errBox');
     eb.style.display='block';
     eb.innerHTML=`<strong>Erro ao buscar dados:</strong> ${err.message}<br><br>
-      <small>Verifique se o limite de 100 requests/dia não foi atingido.</small><br><br>
+      <small>Possível causa: limite de 100 requests/dia atingido, ou problema de conexão.</small><br><br>
       <button onclick="init()" style="background:transparent;border:1px solid var(--amber);color:var(--amber);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:11px;font-family:var(--font);">🔄 Tentar novamente</button>`;
   }
 }
@@ -527,36 +444,33 @@ function renderFiltered(){
     const bt=x.verdict==='GO'?'✅ ENTRAR':x.verdict==='WATCH'?'⚠️ OBSERVAR':'❌ PULAR';
     const sc=(x.score||0)>=75?'var(--green)':(x.score||0)>=50?'var(--amber)':'var(--red)';
     const c=x.criterios||{};
-
-    // Form dots
-    const formDots=(form)=>form.split('').map(r=>`<div class="fd ${r}" title="${r==='W'?'Vitória':r==='D'?'Empate':'Derrota'}"></div>`).join('');
-
-    // Status badge
-    const statusColor = x.status==='FT'?'var(--t3)':x.status==='1H'||x.status==='2H'?'var(--green)':'var(--t3)';
-    const statusLabel = x.status==='FT'?'Encerrado':x.status==='NS'?'Não iniciado':x.status==='1H'?'1º Tempo':x.status==='2H'?'2º Tempo':x.status;
+    const stC=x.status==='FT'?'var(--t3)':x.status==='1H'||x.status==='2H'||x.status==='HT'?'var(--green)':'var(--t2)';
+    const stL=x.status==='FT'?'Encerrado':x.status==='NS'?'Não iniciado':x.status==='HT'?'Intervalo':x.status==='1H'?'1º Tempo':x.status==='2H'?'2º Tempo':x.status;
 
     const crits=[
-      {ok:c.odd_ok,l:`Empate ${x.oddDraw}`},
-      {ok:c.over25_ok,l:`Over2.5 @${x.oddOver25}`},
-      {ok:c.goals_ok,l:`Média gols ${x.totalAvg}`},
+      {ok:c.odd_ok,l:`Empate @${x.oddDraw}`},
+      {ok:c.over25_ok,l:`Over 2.5 @${x.oddOver25}`},
     ].map(cr=>`<div class="crit ${cr.ok===true?'ok':cr.ok===false?'no':'wa'}">${cr.ok===true?'✓':cr.ok===false?'✗':'~'} ${cr.l}</div>`).join('');
+
+    const teamLine = x.scoreStr
+      ? `${x.home} <span style="color:var(--amber);font-family:var(--mono);font-size:13px"> ${x.scoreStr} </span>${x.away}`
+      : `${x.home} × ${x.away}`;
 
     list.innerHTML+=`
     <div class="gc ${cc}">
       <div class="ct">
         <div class="lgi">
-          <span class="lgn">${LIGA_NAMES[x.leagueId]||x.league}</span>
-          <span class="lgc" style="color:${statusColor}">${statusLabel} · ${x.hrBrasil}</span>
+          <span class="lgn">🏆 ${x.league}</span>
+          <span class="lgc" style="color:${stC}">${stL} · ${x.hrBrasil}${x.country?' · '+x.country:''}</span>
         </div>
         <div class="mi">
-          <div class="teams">${x.home} × ${x.away}</div>
+          <div class="teams">${teamLine}</div>
         </div>
         <div class="vd">
           <span class="vb ${bc}">${bt}</span>
           <span class="sc" style="color:${sc}">${x.score}/100</span>
         </div>
       </div>
-
       <div class="mets">
         <div class="mb ${c.odd_ok===true?'pass':c.odd_ok===false?'fail':'warn'}">
           <div class="mbl">Odd Empate</div>
@@ -566,31 +480,15 @@ function renderFiltered(){
           <div class="mbl">Over 2.5</div>
           <div class="mbv">@${x.oddOver25}</div>
         </div>
-        <div class="mb ${c.goals_ok===true?'pass':c.goals_ok===false?'fail':'warn'}">
-          <div class="mbl">Média Gols</div>
-          <div class="mbv">${x.totalAvg}/jogo</div>
-        </div>
         <div class="mb">
-          <div class="mbl">Casa (média)</div>
-          <div class="mbv">${x.homeAvg} gols</div>
+          <div class="mbl">Status</div>
+          <div class="mbv" style="font-size:11px;color:${stC}">${stL}</div>
         </div>
-        <div class="mb">
-          <div class="mbl">Fora (média)</div>
-          <div class="mbv">${x.awayAvg} gols</div>
+        <div class="mb ${x.score>=75?'pass':x.score>=50?'warn':'fail'}">
+          <div class="mbl">LTD Score</div>
+          <div class="mbv">${x.score}/100</div>
         </div>
       </div>
-
-      <div class="extra-row">
-        <div class="ei">
-          <div class="ei-lbl">📋 Forma ${x.home} (últimos 5)</div>
-          <div class="form-dots">${x.homeForm?formDots(x.homeForm):'<span style="font-size:10px;color:var(--t3)">—</span>'}</div>
-        </div>
-        <div class="ei">
-          <div class="ei-lbl">📋 Forma ${x.away} (últimos 5)</div>
-          <div class="form-dots">${x.awayForm?formDots(x.awayForm):'<span style="font-size:10px;color:var(--t3)">—</span>'}</div>
-        </div>
-      </div>
-
       <div class="crits">${crits}</div>
       <div class="anal"><strong>Análise:</strong> ${x.analise}</div>
     </div>`;
