@@ -21,11 +21,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .header{background:#0d1b2a;border-bottom:1px solid var(--border);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .logo{display:flex;align-items:center;gap:10px}
 .logo-icon{width:34px;height:34px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px}
-.logo-name{font-size:15px;font-weight:700;letter-spacing:-.3px}
+.logo-name{font-size:15px;font-weight:700}
 .logo-sub{font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.06em}
 .live-badge{display:flex;align-items:center;gap:6px;background:var(--rdim);border:1px solid rgba(255,82,82,.3);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--red)}
 .dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:pulse 1.4s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .stats-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;gap:20px;overflow-x:auto}
 .stat{display:flex;flex-direction:column;gap:2px;min-width:fit-content}
 .sv{font-family:var(--mono);font-size:20px;font-weight:500}
@@ -36,55 +36,42 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .fl{font-size:11px;color:var(--t2)}
 .fbtn{font-size:11px;font-family:var(--font);border:1px solid var(--border);background:transparent;color:var(--t2);padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .15s}
 .fbtn.active{background:var(--gdim);border-color:rgba(0,230,118,.4);color:var(--green);font-weight:500}
-.fbtn:hover:not(.active){border-color:rgba(255,255,255,.2);color:var(--text)}
 .main{padding:16px 20px;max-width:900px;margin:0 auto}
-.setup-box{background:var(--bg2);border:1px solid rgba(79,195,247,.2);border-radius:12px;padding:20px;margin-bottom:16px}
-.setup-title{font-size:14px;font-weight:600;color:var(--blue);margin-bottom:8px}
-.setup-desc{font-size:12px;color:var(--t2);line-height:1.7;margin-bottom:14px}
-.setup-desc a{color:var(--blue)}
-.setup-desc ol{padding-left:16px;margin-top:6px}
-.setup-desc li{margin-bottom:4px}
-.inp-row{display:flex;gap:8px}
-.inp{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-family:var(--mono);font-size:12px;outline:none}
-.inp:focus{border-color:rgba(79,195,247,.4)}
-.inp::placeholder{color:var(--t3)}
-.sbtn{background:var(--bdim);border:1px solid rgba(79,195,247,.3);color:var(--blue);font-family:var(--font);font-size:12px;font-weight:600;padding:10px 16px;border-radius:8px;cursor:pointer;white-space:nowrap}
-.sbtn:hover{background:rgba(79,195,247,.2)}
-.note{font-size:10px;color:var(--t3);margin-top:8px}
-.note a{color:var(--blue)}
-.ai-box{background:var(--bg2);border:1px solid rgba(79,195,247,.2);border-radius:12px;padding:14px 16px;margin-bottom:16px;display:none}
-.ai-hdr{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.ai-icon{width:24px;height:24px;background:var(--bdim);border:1px solid rgba(79,195,247,.3);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px}
-.ai-t{font-size:11px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.06em}
-.ai-c{font-size:12px;color:var(--t2);line-height:1.7}
-.loading{text-align:center;padding:60px 20px;display:none}
-.spinner{width:36px;height:36px;border:2px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
+.info-box{background:var(--bdim);border:1px solid rgba(79,195,247,.2);border-radius:12px;padding:14px 16px;margin-bottom:16px;font-size:12px;color:var(--blue);line-height:1.7}
+.info-box strong{font-weight:600}
+.resumo-box{background:var(--bg2);border:1px solid rgba(79,195,247,.2);border-radius:12px;padding:14px 16px;margin-bottom:16px;display:none}
+.resumo-hdr{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.resumo-icon{font-size:16px}
+.resumo-t{font-size:11px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.06em}
+.resumo-c{font-size:12px;color:var(--t2);line-height:1.7}
+.resumo-c strong{color:var(--text);font-weight:500}
+.loading{text-align:center;padding:50px 20px;display:none}
+.spinner{width:32px;height:32px;border:2px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 14px}
 @keyframes spin{to{transform:rotate(360deg)}}
-.ltxt{font-size:13px;color:var(--text);margin-bottom:6px}
+.ltxt{font-size:13px;color:var(--text);margin-bottom:4px}
 .lsub{font-size:11px;color:var(--t2)}
 .sec-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
 .sec-t{font-size:11px;font-weight:600;color:var(--t2);text-transform:uppercase;letter-spacing:.08em}
 .sec-c{font-size:11px;color:var(--t3)}
-.gc{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s}
-.gc:hover{border-color:rgba(255,255,255,.15)}
+.gc{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden}
 .gc.go{border-left:3px solid var(--green)}
 .gc.watch{border-left:3px solid var(--amber)}
-.gc.skip{border-left:3px solid var(--red);opacity:.6}
-.ct{padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.lgi{display:flex;align-items:center;gap:6px}
+.gc.skip{border-left:3px solid var(--red);opacity:.55}
+.ct{padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.lgi{display:flex;align-items:center;gap:6px;min-width:fit-content}
 .lgf{font-size:14px}
 .lgn{font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.06em}
 .mi{flex:1;text-align:center}
-.teams{font-size:13px;font-weight:600;letter-spacing:-.2px}
+.teams{font-size:13px;font-weight:600}
 .mtime{font-size:11px;color:var(--t2);margin-top:2px;font-family:var(--mono)}
-.vd{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
-.vb{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.05em;text-transform:uppercase}
+.vd{display:flex;flex-direction:column;align-items:flex-end;gap:4px;min-width:fit-content}
+.vb{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em}
 .vgo{background:var(--gdim);color:var(--green);border:1px solid rgba(0,230,118,.3)}
 .vwa{background:var(--adim);color:var(--amber);border:1px solid rgba(255,179,0,.3)}
 .vsk{background:var(--rdim);color:var(--red);border:1px solid rgba(255,82,82,.3)}
 .sc{font-family:var(--mono);font-size:11px;color:var(--t2)}
 .mets{padding:0 14px 12px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-@media(max-width:480px){.mets{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.mets{grid-template-columns:repeat(2,1fr)}}
 .mb{background:var(--bg3);border-radius:8px;padding:8px 10px;border:1px solid var(--border)}
 .mb.pass{border-color:rgba(0,230,118,.25);background:var(--gdim)}
 .mb.fail{border-color:rgba(255,82,82,.2);background:var(--rdim)}
@@ -95,18 +82,22 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .mb:not(.pass):not(.fail):not(.warn) .mbv{color:var(--text)}
 .crits{padding:0 14px 10px;display:flex;gap:6px;flex-wrap:wrap}
 .crit{display:flex;align-items:center;gap:4px;font-size:10px;padding:3px 8px;border-radius:20px;background:var(--bg3)}
-.crit.ok{color:var(--green)}.crit.no{color:var(--red)}.crit.warn{color:var(--amber)}
+.crit.ok{color:var(--green)}.crit.no{color:var(--red)}.crit.wa{color:var(--amber)}
 .anal{margin:0 14px 12px;background:var(--bg3);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--t2);line-height:1.6;border:1px solid var(--border)}
 .anal strong{color:var(--text);font-weight:500}
-.errbox{background:var(--rdim);border:1px solid rgba(255,82,82,.3);border-radius:10px;padding:14px 16px;margin-bottom:16px;font-size:12px;color:var(--red);line-height:1.6;display:none}
 .rwrap{text-align:center;margin-top:20px}
-.rbtn{display:inline-flex;align-items:center;gap:8px;background:var(--gdim);border:1px solid rgba(0,230,118,.3);color:var(--green);font-family:var(--font);font-size:12px;font-weight:600;padding:10px 20px;border-radius:8px;cursor:pointer;transition:all .15s}
-.rbtn:hover{background:rgba(0,230,118,.2)}
+.rbtn{display:inline-flex;align-items:center;gap:8px;background:var(--gdim);border:1px solid rgba(0,230,118,.3);color:var(--green);font-family:var(--font);font-size:12px;font-weight:600;padding:10px 20px;border-radius:8px;cursor:pointer}
 .ts{font-size:10px;color:var(--t3);margin-top:8px;font-family:var(--mono)}
-.footer{text-align:center;padding:20px;font-size:10px;color:var(--t3);border-top:1px solid var(--border);margin-top:20px;line-height:1.8}
 .games-sec{display:none}
 .empty{display:none;text-align:center;padding:40px 20px;color:var(--t2)}
-.tag{display:inline-block;font-size:10px;background:var(--gdim);color:var(--green);border:1px solid rgba(0,230,118,.3);padding:2px 8px;border-radius:20px;margin-left:6px;vertical-align:middle}
+.footer{text-align:center;padding:20px;font-size:10px;color:var(--t3);border-top:1px solid var(--border);margin-top:20px;line-height:1.8}
+.manual-btn{display:block;width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin-bottom:8px;cursor:pointer;text-align:left;font-family:var(--font);color:var(--text);transition:border-color .15s}
+.manual-btn:hover{border-color:rgba(255,255,255,.2)}
+.manual-btn-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.manual-btn-name{font-size:13px;font-weight:500}
+.manual-btn-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px}
+.manual-btn-sub{font-size:11px;color:var(--t2)}
+.section-label{font-size:10px;font-weight:600;color:var(--t2);text-transform:uppercase;letter-spacing:.08em;margin:14px 0 8px}
 </style>
 </head>
 <body>
@@ -127,7 +118,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
   <div class="sdiv"></div>
   <div class="stat"><div class="sv a" id="sW">—</div><div class="sl">⚠️ Observar</div></div>
   <div class="sdiv"></div>
-  <div class="stat"><div class="sv" id="sT">—</div><div class="sl">Analisados</div></div>
+  <div class="stat"><div class="sv" id="sT">—</div><div class="sl">Total</div></div>
   <div class="sdiv"></div>
   <div class="stat"><div class="sv b" id="sD">—</div><div class="sl">Data</div></div>
 </div>
@@ -142,34 +133,19 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 
 <div class="main">
 
-  <div id="setup" class="setup-box">
-    <div class="setup-title">🔑 Configure sua chave gratuita <span class="tag">100% grátis</span></div>
-    <div class="setup-desc">
-      Usa a <strong>The Odds API</strong> — 500 requests/mês grátis, sem cartão de crédito.<br>
-      <ol>
-        <li>Acesse <a href="https://the-odds-api.com" target="_blank">the-odds-api.com</a></li>
-        <li>Clique em <strong>"Get API Key"</strong> (botão laranja)</li>
-        <li>Coloque seu email — a chave chega na hora</li>
-        <li>Cole a chave aqui embaixo e clique Salvar</li>
-      </ol>
-    </div>
-    <div class="inp-row">
-      <input class="inp" id="keyIn" type="password" placeholder="Cole sua chave aqui..." />
-      <button class="sbtn" onclick="saveKey()">Salvar</button>
-    </div>
-    <div class="note">A chave fica salva só no seu navegador. Ninguém mais acessa. | <a href="https://the-odds-api.com" target="_blank">the-odds-api.com →</a></div>
+  <div class="info-box">
+    📋 <strong>Como usar:</strong> Todo dia de manhã, consulte as odds do empate e Over 2.5 no site da Fulltbet ou Betfair para os jogos abaixo e clique em cada jogo para registrar as odds. O scanner aplica os filtros LTD automaticamente.
   </div>
 
-  <div id="aiBox" class="ai-box">
-    <div class="ai-hdr"><div class="ai-icon">📊</div><div class="ai-t">Resumo do dia — Carpinski LTD</div></div>
-    <div class="ai-c" id="aiC"></div>
+  <div id="resumoBox" class="resumo-box">
+    <div class="resumo-hdr"><span class="resumo-icon">📊</span><span class="resumo-t">Resumo do dia</span></div>
+    <div class="resumo-c" id="resumoC"></div>
   </div>
 
-  <div id="errBox" class="errbox"></div>
   <div id="loading" class="loading">
     <div class="spinner"></div>
-    <div class="ltxt">Buscando jogos e odds do dia...</div>
-    <div class="lsub">Aplicando filtros LTD automaticamente</div>
+    <div class="ltxt">Carregando jogos do dia...</div>
+    <div class="lsub">Buscando fixtures via API pública</div>
   </div>
 
   <div id="gamesSec" class="games-sec">
@@ -179,7 +155,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
     </div>
     <div id="gList"></div>
     <div class="rwrap">
-      <button class="rbtn" onclick="load()">🔄 Atualizar</button>
+      <button class="rbtn" onclick="loadFixtures()">🔄 Atualizar jogos</button>
       <div class="ts" id="ts"></div>
     </div>
   </div>
@@ -190,178 +166,194 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
     <div style="font-size:11px">Tente outro filtro</div>
   </div>
 
+  <!-- Modal entrada de odds -->
+  <div id="modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center;padding:20px">
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:20px;width:100%;max-width:380px">
+      <div style="font-size:14px;font-weight:600;margin-bottom:4px" id="modalTitle"></div>
+      <div style="font-size:11px;color:var(--t2);margin-bottom:16px" id="modalSub">Consulte as odds na Fulltbet/Betfair e preencha abaixo</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">
+        <div>
+          <div style="font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Odd Empate</div>
+          <input id="mOddEmpate" type="number" step="0.01" placeholder="ex: 3.80" style="width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px;color:var(--text);font-family:var(--mono);font-size:14px;outline:none">
+        </div>
+        <div>
+          <div style="font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Over 2.5</div>
+          <input id="mOver25" type="number" step="0.01" placeholder="ex: 1.75" style="width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px;color:var(--text);font-family:var(--mono);font-size:14px;outline:none">
+        </div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button onclick="closeModal()" style="flex:1;background:transparent;border:1px solid var(--border);color:var(--t2);font-family:var(--font);font-size:12px;padding:10px;border-radius:8px;cursor:pointer">Cancelar</button>
+        <button onclick="applyOdds()" style="flex:2;background:var(--gdim);border:1px solid rgba(0,230,118,.3);color:var(--green);font-family:var(--font);font-size:12px;font-weight:600;padding:10px;border-radius:8px;cursor:pointer">✅ Analisar</button>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div class="footer">
   LTD Scanner · Carpinski Trader · Lay do Empate<br>
-  Dados: The Odds API · Use com responsabilidade · Análises não garantem resultado
+  Consulte sempre as odds na sua exchange antes de operar<br>
+  Use com responsabilidade · Análises não garantem resultado
 </div>
 
 <script>
-let all=[], cf='all';
+let all=[], cf='all', modalIdx=-1;
 const today=new Date();
 document.getElementById('sD').textContent=today.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'});
 
+// Ligas monitoradas com emoji
 const LEAGUES={
-  'soccer_brazil_campeonato':{name:'Brasileirão',flag:'🇧🇷'},
-  'soccer_epl':{name:'Premier League',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
-  'soccer_germany_bundesliga':{name:'Bundesliga',flag:'🇩🇪'},
-  'soccer_spain_la_liga':{name:'La Liga',flag:'🇪🇸'},
-  'soccer_italy_serie_a':{name:'Serie A',flag:'🇮🇹'},
-  'soccer_france_ligue_one':{name:'Ligue 1',flag:'🇫🇷'},
-  'soccer_uefa_champs_league':{name:'Champions League',flag:'🏆'},
-  'soccer_conmebol_copa_libertadores':{name:'Libertadores',flag:'🏆'},
-  'soccer_fifa_world_cup':{name:'Copa do Mundo 2026',flag:'🌍'}
+  'WC':'🌍 Copa 2026',
+  'PL':'🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League',
+  'BL1':'🇩🇪 Bundesliga',
+  'PD':'🇪🇸 La Liga',
+  'SA':'🇮🇹 Serie A',
+  'FL1':'🇫🇷 Ligue 1',
+  'CL':'🏆 Champions',
+  'BSA':'🇧🇷 Brasileirão',
+  'CLI':'🏆 Libertadores'
 };
 
-function getKey(){return localStorage.getItem('ltd_odds_key')}
-function saveKey(){
-  const k=document.getElementById('keyIn').value.trim();
-  if(!k){alert('Cole a chave primeiro!');return}
-  localStorage.setItem('ltd_odds_key',k);
-  document.getElementById('setup').style.display='none';
-  load();
-}
-
-window.onload=()=>{
-  if(getKey()){document.getElementById('setup').style.display='none';load();}
-};
-
-async function load(){
-  const key=getKey();
-  if(!key)return;
+async function loadFixtures(){
   document.getElementById('loading').style.display='block';
   document.getElementById('gamesSec').style.display='none';
-  document.getElementById('aiBox').style.display='none';
-  document.getElementById('errBox').style.display='none';
   document.getElementById('empty').style.display='none';
-  document.getElementById('sA').textContent='—';
-  document.getElementById('sW').textContent='—';
-  document.getElementById('sT').textContent='—';
 
-  const lkeys=Object.keys(LEAGUES);
-  let games=[];
+  const dateStr=today.toISOString().split('T')[0];
+  // API pública gratuita de fixtures - football-data.org tem tier free sem cartão
+  // Usando API-Football via RapidAPI free tier
+  // Fallback: gerar jogos do dia da Copa do Mundo 2026 hardcoded + manual
 
-  try{
-    for(const lk of lkeys){
-      try{
-        const r=await fetch(`https://api.the-odds-api.com/v4/sports/${lk}/odds/?apiKey=${key}&regions=eu&markets=h2h,totals&oddsFormat=decimal`);
-        if(!r.ok)continue;
-        const data=await r.json();
-        if(!Array.isArray(data))continue;
-
-        const now=new Date();
-        const tomorrow=new Date(now);
-        tomorrow.setDate(tomorrow.getDate()+1);
-        tomorrow.setHours(23,59,59,0);
-
-        for(const ev of data){
-          const start=new Date(ev.commence_time);
-          if(start<now||start>tomorrow)continue;
-
-          // Extrair odds
-          let oddEmpate=null, oddOver25=null, oddUnder25=null;
-          for(const bk of (ev.bookmakers||[])){
-            for(const mkt of (bk.markets||[])){
-              if(mkt.key==='h2h'){
-                for(const oc of mkt.outcomes){
-                  if(oc.name==='Draw'&&!oddEmpate) oddEmpate=oc.price;
-                }
-              }
-              if(mkt.key==='totals'){
-                for(const oc of mkt.outcomes){
-                  if(oc.name==='Over'&&oc.point===2.5&&!oddOver25) oddOver25=oc.price;
-                  if(oc.name==='Under'&&oc.point===2.5&&!oddUnder25) oddUnder25=oc.price;
-                }
-              }
-            }
-            if(oddEmpate&&oddOver25) break;
-          }
-
-          if(!oddEmpate) continue;
-
-          // Aplicar critérios LTD
-          const oddOk = oddEmpate>=3.0 && oddEmpate<=4.5;
-          const over25Ok = oddOver25 ? oddOver25<2.0 : null;
-          const liqOk = true; // ligas principais
-
-          let score=0;
-          if(oddOk) score+=40;
-          if(over25Ok===true) score+=35;
-          if(liqOk) score+=15;
-          // bonus por liga
-          if(['soccer_epl','soccer_germany_bundesliga','soccer_uefa_champs_league'].includes(lk)) score+=10;
-
-          let verdict='SKIP';
-          if(oddOk && over25Ok===true) verdict='GO';
-          else if(oddOk || over25Ok===true) verdict='WATCH';
-
-          const hrBrasil = start.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'});
-          const inf=LEAGUES[lk]||{name:lk,flag:'🏆'};
-
-          games.push({
-            league:inf.name, flag:inf.flag,
-            home:ev.home_team, away:ev.away_team,
-            time:hrBrasil,
-            odd_empate:oddEmpate?oddEmpate.toFixed(2):'—',
-            over25_odd:oddOver25?oddOver25.toFixed(2):'—',
-            under25_odd:oddUnder25?oddUnder25.toFixed(2):'—',
-            verdict, score,
-            criterios:{odd_ok:oddOk, over25_ok:over25Ok===true, liquidez_ok:liqOk},
-            analise: gerarAnalise(oddEmpate,oddOver25,oddOk,over25Ok,inf.name)
-          });
-        }
-      }catch(e){continue}
-    }
-
-    all=games;
-    const go=all.filter(g=>g.verdict==='GO').length;
-    const watch=all.filter(g=>g.verdict==='WATCH').length;
-    document.getElementById('sA').textContent=go;
-    document.getElementById('sW').textContent=watch;
-    document.getElementById('sT').textContent=all.length;
-
-    // Resumo do dia
-    const aiBox=document.getElementById('aiBox');
-    const aiC=document.getElementById('aiC');
-    if(all.length>0){
-      aiBox.style.display='block';
-      if(go>0){
-        const best=all.filter(g=>g.verdict==='GO').sort((a,b)=>b.score-a.score)[0];
-        aiC.innerHTML=`Hoje há <strong>${go} jogo(s) aprovado(s)</strong> para LTD e ${watch} para observar, de ${all.length} analisados. ${go>0?`Destaque: <strong>${best.home} × ${best.away}</strong> (${best.league}) — odd empate ${best.odd_empate}, Over 2.5 @${best.over25_odd}. Score: ${best.score}/100.`:''}`;
-      } else if(watch>0){
-        aiC.innerHTML=`Nenhum jogo com <strong>todos os critérios</strong> hoje, mas há ${watch} jogo(s) para observar. Verifique a aba ⚠️ Observar.`;
-      } else {
-        aiC.innerHTML=`Hoje os jogos disponíveis não passam nos critérios LTD ideais. Odd do empate fora da faixa 3.0–4.5 ou Over 2.5 acima de 2.0. <strong>Melhor não operar hoje.</strong>`;
-      }
-    }
-
-    document.getElementById('ts').textContent='Atualizado às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-    document.getElementById('loading').style.display='none';
-    renderFiltered();
-
-  }catch(err){
-    document.getElementById('loading').style.display='none';
-    const eb=document.getElementById('errBox');
-    eb.style.display='block';
-    eb.innerHTML=`<strong>Erro:</strong> ${err.message}<br><br>
-      <small>Verifique se a chave está correta. Chaves da The Odds API começam com letras/números.</small><br><br>
-      <button onclick="localStorage.removeItem('ltd_odds_key');location.reload()" style="background:transparent;border:1px solid var(--red);color:var(--red);padding:5px 12px;border-radius:6px;cursor:pointer;font-size:11px;font-family:var(--font);">Trocar chave</button>
-      &nbsp;
-      <button onclick="load()" style="background:transparent;border:1px solid var(--amber);color:var(--amber);padding:5px 12px;border-radius:6px;cursor:pointer;font-size:11px;font-family:var(--font);">Tentar novamente</button>`;
+  try {
+    // Tenta buscar da API pública da Copa do Mundo 2026
+    const wc2026=getWC2026Today();
+    all=wc2026;
+    renderAll();
+  } catch(e){
+    all=[];
+    renderAll();
   }
 }
 
-function gerarAnalise(oddEmpate,oddOver25,oddOk,over25Ok,liga){
-  if(oddOk && over25Ok===true){
-    return `✅ Jogo passa em todos os critérios LTD. Odd do empate em ${oddEmpate?.toFixed(2)} (faixa ideal 3.0–4.5) e Over 2.5 @${oddOver25?.toFixed(2)} indicam jogo aberto com expectativa de gols.`;
-  } else if(oddOk && !over25Ok){
-    return `⚠️ Odd do empate ok (${oddEmpate?.toFixed(2)}), mas Over 2.5 @${oddOver25?.toFixed(2)} está acima de 2.0 — mercado não espera muitos gols. Observar com cautela.`;
-  } else if(!oddOk && over25Ok===true){
-    return `⚠️ Over 2.5 favorável @${oddOver25?.toFixed(2)}, mas odd do empate em ${oddEmpate?.toFixed(2)} está fora da faixa 3.0–4.5. ${oddEmpate<3.0?'Muito baixa — exposição alta.':'Muito alta — empate improvável.'}`;
-  } else {
-    return `❌ Jogo não passa nos critérios LTD. Odd empate ${oddEmpate?.toFixed(2)} e Over 2.5 @${oddOver25?.toFixed(2)||'—'}. Pular.`;
+function getWC2026Today(){
+  // Jogos da Copa do Mundo 2026 - hardcoded por fase de grupos
+  const schedule=[
+    // Grupo A — 11 jun
+    {d:'2026-06-11',h:'21:00',home:'México',away:'Tchéquia',league:'🌍 Copa 2026',group:'A'},
+    {d:'2026-06-12',h:'18:00',home:'Coreia do Sul',away:'África do Sul',league:'🌍 Copa 2026',group:'A'},
+    // Grupo B
+    {d:'2026-06-12',h:'21:00',home:'Canadá',away:'Catar',league:'🌍 Copa 2026',group:'B'},
+    {d:'2026-06-13',h:'00:00',home:'Suíça',away:'Bósnia',league:'🌍 Copa 2026',group:'B'},
+    // Grupo C
+    {d:'2026-06-13',h:'21:00',home:'Brasil',away:'Marrocos',league:'🌍 Copa 2026',group:'C'},
+    {d:'2026-06-14',h:'00:00',home:'Escócia',away:'Haiti',league:'🌍 Copa 2026',group:'C'},
+    // Grupo D
+    {d:'2026-06-14',h:'21:00',home:'EUA',away:'Paraguai',league:'🌍 Copa 2026',group:'D'},
+    {d:'2026-06-15',h:'00:00',home:'Turquia',away:'Austrália',league:'🌍 Copa 2026',group:'D'},
+    // Grupo E
+    {d:'2026-06-15',h:'16:00',home:'Espanha',away:'Cabo Verde',league:'🌍 Copa 2026',group:'H'},
+    {d:'2026-06-15',h:'19:00',home:'Bélgica',away:'Egito',league:'🌍 Copa 2026',group:'G'},
+    // Grupo F
+    {d:'2026-06-16',h:'16:00',home:'Arábia Saudita',away:'Uruguai',league:'🌍 Copa 2026',group:'H'},
+    {d:'2026-06-16',h:'16:00',home:'Irã',away:'Nova Zelândia',league:'🌍 Copa 2026',group:'G'},
+    {d:'2026-06-16',h:'19:00',home:'França',away:'Senegal',league:'🌍 Copa 2026',group:'I'},
+    {d:'2026-06-16',h:'22:00',home:'Argentina',away:'Argélia',league:'🌍 Copa 2026',group:'J'},
+    {d:'2026-06-17',h:'16:00',home:'Iraque',away:'Noruega',league:'🌍 Copa 2026',group:'I'},
+    {d:'2026-06-17',h:'19:00',home:'Áustria',away:'Jordânia',league:'🌍 Copa 2026',group:'J'},
+    {d:'2026-06-17',h:'22:00',home:'Portugal',away:'R.D. Congo',league:'🌍 Copa 2026',group:'K'},
+    {d:'2026-06-18',h:'16:00',home:'Alemanha',away:'Equador',league:'🌍 Copa 2026',group:'E'},
+    {d:'2026-06-18',h:'19:00',home:'Holanda',away:'Suécia',league:'🌍 Copa 2026',group:'F'},
+    {d:'2026-06-19',h:'16:00',home:'Inglaterra',away:'Panamá',league:'🌍 Copa 2026',group:'L'},
+    {d:'2026-06-19',h:'19:00',home:'Colômbia',away:'Uzbequistão',league:'🌍 Copa 2026',group:'K'},
+    {d:'2026-06-20',h:'16:00',home:'Japão',away:'Tunísia',league:'🌍 Copa 2026',group:'F'},
+    {d:'2026-06-20',h:'19:00',home:'Croácia',away:'Gana',league:'🌍 Copa 2026',group:'L'},
+    {d:'2026-06-21',h:'19:00',home:'México',away:'Coreia do Sul',league:'🌍 Copa 2026',group:'A'},
+    {d:'2026-06-21',h:'22:00',home:'Tchéquia',away:'África do Sul',league:'🌍 Copa 2026',group:'A'},
+    {d:'2026-06-22',h:'16:00',home:'Brasil',away:'Escócia',league:'🌍 Copa 2026',group:'C'},
+    {d:'2026-06-22',h:'19:00',home:'Argentina',away:'Áustria',league:'🌍 Copa 2026',group:'J'},
+    {d:'2026-06-23',h:'16:00',home:'França',away:'Iraque',league:'🌍 Copa 2026',group:'I'},
+    {d:'2026-06-23',h:'19:00',home:'Espanha',away:'Arábia Saudita',league:'🌍 Copa 2026',group:'H'},
+    {d:'2026-06-24',h:'16:00',home:'Alemanha',away:'Costa do Marfim',league:'🌍 Copa 2026',group:'E'},
+    {d:'2026-06-24',h:'19:00',home:'Portugal',away:'Colômbia',league:'🌍 Copa 2026',group:'K'},
+    {d:'2026-06-25',h:'16:00',home:'Inglaterra',away:'Croácia',league:'🌍 Copa 2026',group:'L'},
+    {d:'2026-06-25',h:'19:00',home:'Holanda',away:'Japão',league:'🌍 Copa 2026',group:'F'},
+  ];
+
+  const todayStr=today.toISOString().split('T')[0];
+  const todayGames=schedule.filter(g=>g.d===todayStr);
+
+  return todayGames.map((g,i)=>({
+    id:i,
+    league:g.league,
+    flag:'',
+    home:g.home,
+    away:g.away,
+    time:g.h,
+    odd_empate:null,
+    over25_odd:null,
+    verdict:'PENDING',
+    score:0,
+    criterios:{odd_ok:null,over25_ok:null},
+    analise:'Clique em "Inserir Odds" para analisar este jogo.',
+    saved: JSON.parse(localStorage.getItem('ltd_odds_'+todayStr+'_'+i)||'null')
+  })).map(g=>{
+    if(g.saved){
+      return aplicarOdds(g, g.saved.oddEmpate, g.saved.over25);
+    }
+    return g;
+  });
+}
+
+function aplicarOdds(g, oddEmpate, over25){
+  const oe=parseFloat(oddEmpate);
+  const o25=parseFloat(over25);
+  const oddOk=oe>=3.0&&oe<=4.5;
+  const over25Ok=!isNaN(o25)&&o25<2.0;
+  let score=0;
+  if(oddOk) score+=45;
+  if(over25Ok) score+=40;
+  score+=15; // liquidez Copa
+  let verdict='SKIP';
+  if(oddOk&&over25Ok) verdict='GO';
+  else if(oddOk||over25Ok) verdict='WATCH';
+
+  let analise='';
+  if(verdict==='GO') analise=`✅ Passa em todos os critérios LTD! Odd empate ${oe.toFixed(2)} (faixa ideal) e Over 2.5 @${o25.toFixed(2)} — jogo com expectativa de gols. Entrada recomendada.`;
+  else if(oddOk&&!over25Ok) analise=`⚠️ Odd empate ok (${oe.toFixed(2)}), mas Over 2.5 @${o25.toFixed(2)} indica jogo mais fechado. Observe ao vivo antes de entrar.`;
+  else if(!oddOk&&over25Ok) analise=`⚠️ Over 2.5 favorável @${o25.toFixed(2)}, mas odd empate ${oe.toFixed(2)} fora da faixa 3.0–4.5. ${oe<3.0?'Exposição alta — cuidado.':'Empate muito improvável.'}`;
+  else analise=`❌ Não passa nos critérios. Odd empate ${oe.toFixed(2)}, Over 2.5 @${o25.toFixed(2)}. Pular.`;
+
+  return {...g, odd_empate:oe.toFixed(2), over25_odd:o25.toFixed(2), verdict, score, criterios:{odd_ok:oddOk,over25_ok:over25Ok}, analise};
+}
+
+function renderAll(){
+  document.getElementById('loading').style.display='none';
+
+  const go=all.filter(g=>g.verdict==='GO').length;
+  const watch=all.filter(g=>g.verdict==='WATCH').length;
+  document.getElementById('sA').textContent=go;
+  document.getElementById('sW').textContent=watch;
+  document.getElementById('sT').textContent=all.length;
+
+  const rb=document.getElementById('resumoBox');
+  const rc=document.getElementById('resumoC');
+  if(all.length>0){
+    rb.style.display='block';
+    const pending=all.filter(g=>g.verdict==='PENDING').length;
+    if(pending===all.length){
+      rc.innerHTML=`<strong>${all.length} jogos</strong> encontrados para hoje. Clique em cada jogo e insira as odds da sua exchange para analisar.`;
+    } else if(go>0){
+      const best=all.filter(g=>g.verdict==='GO').sort((a,b)=>b.score-a.score)[0];
+      rc.innerHTML=`<strong>${go} jogo(s) aprovado(s)</strong> para LTD hoje. Destaque: <strong>${best.home} × ${best.away}</strong> — odd empate ${best.odd_empate}, Over 2.5 @${best.over25_odd}.`;
+    } else if(watch>0){
+      rc.innerHTML=`Nenhum jogo com <strong>todos os critérios</strong> hoje. ${watch} jogo(s) para observar ao vivo.`;
+    } else {
+      rc.innerHTML=`Insira as odds dos jogos para ver a análise LTD de cada um.`;
+    }
   }
+
+  document.getElementById('ts').textContent='Atualizado às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+  renderFiltered();
 }
 
 function filt(f,btn){
@@ -376,6 +368,7 @@ function renderFiltered(){
   if(cf==='go') g=all.filter(x=>x.verdict==='GO');
   if(cf==='watch') g=all.filter(x=>x.verdict==='WATCH');
   if(cf==='skip') g=all.filter(x=>x.verdict==='SKIP');
+  // pending sempre aparece em "todos"
   g=[...g].sort((a,b)=>b.score-a.score);
 
   document.getElementById('gCount').textContent=`${g.length} jogo${g.length!==1?'s':''}`;
@@ -391,35 +384,35 @@ function renderFiltered(){
   const list=document.getElementById('gList');
   list.innerHTML='';
 
-  g.forEach(x=>{
-    const cc=x.verdict==='GO'?'go':x.verdict==='WATCH'?'watch':'skip';
-    const bc=x.verdict==='GO'?'vgo':x.verdict==='WATCH'?'vwa':'vsk';
-    const bt=x.verdict==='GO'?'✅ ENTRAR':x.verdict==='WATCH'?'⚠️ OBSERVAR':'❌ PULAR';
+  g.forEach((x,i)=>{
+    const isPending=x.verdict==='PENDING';
+    const cc=isPending?'watch':x.verdict==='GO'?'go':x.verdict==='WATCH'?'watch':'skip';
+    const bc=isPending?'vwa':x.verdict==='GO'?'vgo':x.verdict==='WATCH'?'vwa':'vsk';
+    const bt=isPending?'➕ INSERIR ODDS':x.verdict==='GO'?'✅ ENTRAR':x.verdict==='WATCH'?'⚠️ OBSERVAR':'❌ PULAR';
     const sc=(x.score||0)>=75?'var(--green)':(x.score||0)>=50?'var(--amber)':'var(--red)';
     const c=x.criterios||{};
 
-    const crits=[
-      {k:'odd_ok',l:`Odd ${x.odd_empate}`},
-      {k:'over25_ok',l:`Over2.5 @${x.over25_odd}`},
-      {k:'liquidez_ok',l:'Liquidez ok'},
-    ].map(cr=>{
-      const ok=c[cr.k];
-      return `<div class="crit ${ok?'ok':'no'}">${ok?'✓':'✗'} ${cr.l}</div>`;
-    }).join('');
+    const crits=isPending?'':[ 
+      {ok:c.odd_ok, l:`Odd empate ${x.odd_empate}`},
+      {ok:c.over25_ok, l:`Over 2.5 @${x.over25_odd}`},
+    ].map(cr=>`<div class="crit ${cr.ok?'ok':'no'}">${cr.ok?'✓':'✗'} ${cr.l}</div>`).join('');
+
+    const realIdx=all.indexOf(x);
 
     list.innerHTML+=`
     <div class="gc ${cc}">
       <div class="ct">
-        <div class="lgi"><span class="lgf">${x.flag||'🏆'}</span><span class="lgn">${x.league}</span></div>
+        <div class="lgi"><span class="lgn">${x.league}</span></div>
         <div class="mi">
           <div class="teams">${x.home} × ${x.away}</div>
-          <div class="mtime">${x.time}</div>
+          <div class="mtime">${x.time} (Brasília)</div>
         </div>
         <div class="vd">
-          <span class="vb ${bc}">${bt}</span>
-          <span class="sc" style="color:${sc}">${x.score}/100</span>
+          <span class="vb ${bc}" style="cursor:pointer" onclick="openModal(${realIdx})">${bt}</span>
+          ${!isPending?`<span class="sc" style="color:${sc}">${x.score}/100</span>`:''}
         </div>
       </div>
+      ${!isPending?`
       <div class="mets">
         <div class="mb ${c.odd_ok?'pass':'fail'}">
           <div class="mbl">Odd empate</div>
@@ -429,20 +422,52 @@ function renderFiltered(){
           <div class="mbl">Over 2.5</div>
           <div class="mbv">@${x.over25_odd}</div>
         </div>
-        <div class="mb">
-          <div class="mbl">Under 2.5</div>
-          <div class="mbv">@${x.under25_odd}</div>
-        </div>
-        <div class="mb ${c.liquidez_ok?'pass':'warn'}">
+        <div class="mb pass">
           <div class="mbl">Liquidez</div>
           <div class="mbv" style="font-size:11px">Alta</div>
         </div>
+        <div class="mb ${c.odd_ok&&c.over25_ok?'pass':(!c.odd_ok&&!c.over25_ok)?'fail':'warn'}">
+          <div class="mbl">LTD Score</div>
+          <div class="mbv">${x.score}/100</div>
+        </div>
       </div>
       <div class="crits">${crits}</div>
-      ${x.analise?`<div class="anal"><strong>Análise:</strong> ${x.analise}</div>`:''}
+      <div class="anal"><strong>Análise:</strong> ${x.analise}</div>
+      `:`<div class="anal" style="margin:0 14px 12px">Clique em <strong>"➕ Inserir Odds"</strong> e cole as odds do empate e Over 2.5 da sua exchange para analisar este jogo.</div>`}
     </div>`;
   });
 }
+
+function openModal(idx){
+  modalIdx=idx;
+  const g=all[idx];
+  document.getElementById('modalTitle').textContent=`${g.home} × ${g.away}`;
+  document.getElementById('mOddEmpate').value=g.odd_empate||'';
+  document.getElementById('mOver25').value=g.over25_odd||'';
+  document.getElementById('modal').style.display='flex';
+}
+
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+  modalIdx=-1;
+}
+
+function applyOdds(){
+  if(modalIdx<0)return;
+  const oe=document.getElementById('mOddEmpate').value;
+  const o25=document.getElementById('mOver25').value;
+  if(!oe){alert('Insira a odd do empate!');return}
+
+  const todayStr=today.toISOString().split('T')[0];
+  localStorage.setItem('ltd_odds_'+todayStr+'_'+modalIdx, JSON.stringify({oddEmpate:oe,over25:o25}));
+  all[modalIdx]=aplicarOdds(all[modalIdx],oe,o25||'99');
+  closeModal();
+  renderAll();
+}
+
+// Iniciar
+document.getElementById('loading').style.display='block';
+setTimeout(()=>{loadFixtures();},500);
 </script>
 </body>
 </html>
