@@ -26,12 +26,18 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .live-badge{display:flex;align-items:center;gap:6px;background:var(--rdim);border:1px solid rgba(255,82,82,.3);border-radius:20px;padding:4px 10px;font-size:11px;font-weight:600;color:var(--red)}
 .dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:pulse 1.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.stats-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;gap:20px;overflow-x:auto}
+.stats-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;gap:16px;overflow-x:auto;align-items:center;flex-wrap:wrap}
 .stat{display:flex;flex-direction:column;gap:2px;min-width:fit-content}
-.sv{font-family:var(--mono);font-size:20px;font-weight:500}
+.sv{font-family:var(--mono);font-size:18px;font-weight:500}
 .sv.g{color:var(--green)}.sv.a{color:var(--amber)}.sv.b{color:var(--blue)}
 .sl{font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.06em}
-.sdiv{width:1px;background:var(--border);align-self:stretch}
+.sdiv{width:1px;background:var(--border);align-self:stretch;height:32px}
+.date-picker-wrap{display:flex;align-items:center;gap:8px;margin-left:auto}
+.date-nav{background:transparent;border:1px solid var(--border);color:var(--t2);width:28px;height:28px;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .15s}
+.date-nav:hover{border-color:rgba(255,255,255,.25);color:var(--text)}
+.date-input{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:5px 10px;color:var(--text);font-family:var(--mono);font-size:12px;outline:none;cursor:pointer}
+.date-input:focus{border-color:rgba(79,195,247,.4)}
+.date-lbl{font-size:10px;color:var(--t2);text-transform:uppercase;letter-spacing:.05em}
 .filters{padding:10px 20px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--border)}
 .fl{font-size:11px;color:var(--t2)}
 .fbtn{font-size:11px;font-family:var(--font);border:1px solid var(--border);background:transparent;color:var(--t2);padding:5px 12px;border-radius:20px;cursor:pointer;transition:all .15s}
@@ -48,7 +54,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .ltxt{font-size:13px;color:var(--text);margin-bottom:4px}
 .lsub{font-size:11px;color:var(--t2)}
 .lsteps{margin-top:12px;display:flex;flex-direction:column;gap:5px}
-.lstep{font-size:11px;color:var(--t3)}
+.lstep{font-size:11px;color:var(--t3);transition:color .3s}
 .lstep.done{color:var(--green)}
 .lstep.cur{color:var(--amber)}
 .sec-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
@@ -70,7 +76,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .vwa{background:var(--adim);color:var(--amber);border:1px solid rgba(255,179,0,.3)}
 .vsk{background:var(--rdim);color:var(--red);border:1px solid rgba(255,82,82,.3)}
 .sc{font-family:var(--mono);font-size:11px;color:var(--t2)}
-.mets{padding:0 14px 12px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.mets{padding:0 14px 10px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 @media(max-width:500px){.mets{grid-template-columns:repeat(2,1fr)}}
 .mb{background:var(--bg3);border-radius:8px;padding:8px 10px;border:1px solid var(--border)}
 .mb.pass{border-color:rgba(0,230,118,.25);background:var(--gdim)}
@@ -80,9 +86,14 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .mbv{font-family:var(--mono);font-size:13px;font-weight:500}
 .mb.pass .mbv{color:var(--green)}.mb.fail .mbv{color:var(--red)}.mb.warn .mbv{color:var(--amber)}
 .mb:not(.pass):not(.fail):not(.warn) .mbv{color:var(--text)}
-.crits{padding:0 14px 10px;display:flex;gap:6px;flex-wrap:wrap}
+.crits{padding:0 14px 8px;display:flex;gap:6px;flex-wrap:wrap}
 .crit{display:flex;align-items:center;gap:4px;font-size:10px;padding:3px 8px;border-radius:20px;background:var(--bg3)}
 .crit.ok{color:var(--green)}.crit.no{color:var(--red)}.crit.wa{color:var(--amber)}
+.extra-info{padding:0 14px 10px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ei-box{background:var(--bg3);border-radius:8px;padding:8px 10px;border:1px solid var(--border);font-size:11px}
+.ei-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--t2);margin-bottom:4px}
+.ei-val{color:var(--text);line-height:1.5}
+.inj-box{padding:0 14px 10px;font-size:10px;color:var(--t3);line-height:1.6}
 .anal{margin:0 14px 12px;background:var(--bg3);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--t2);line-height:1.6;border:1px solid var(--border)}
 .anal strong{color:var(--text);font-weight:500}
 .errbox{background:var(--rdim);border:1px solid rgba(255,82,82,.3);border-radius:10px;padding:14px 16px;margin-bottom:16px;font-size:12px;color:var(--red);line-height:1.6;display:none}
@@ -92,7 +103,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
 .games-sec{display:none}
 .empty{display:none;text-align:center;padding:40px 20px;color:var(--t2)}
 .footer{text-align:center;padding:20px;font-size:10px;color:var(--t3);border-top:1px solid var(--border);margin-top:20px;line-height:1.8}
-.players-list{font-size:11px;color:var(--t3);margin-top:4px}
+.form-row{display:flex;gap:6px;align-items:center;background:var(--bg3);border-radius:8px;padding:6px 10px;font-size:11px;color:var(--t2)}
+.form-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:2px}
+.form-dot.w{background:var(--green)}.form-dot.d{background:var(--amber)}.form-dot.l{background:var(--red)}
 </style>
 </head>
 <body>
@@ -115,7 +128,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
   <div class="sdiv"></div>
   <div class="stat"><div class="sv" id="sT">—</div><div class="sl">Total</div></div>
   <div class="sdiv"></div>
-  <div class="stat"><div class="sv b" id="sD">—</div><div class="sl">Data</div></div>
+  <div class="date-picker-wrap">
+    <div class="date-lbl">📅 Data:</div>
+    <button class="date-nav" onclick="changeDate(-1)">‹</button>
+    <input class="date-input" type="date" id="datePicker" onchange="init()">
+    <button class="date-nav" onclick="changeDate(1)">›</button>
+    <button class="date-nav" onclick="goToday()" title="Hoje" style="width:auto;padding:0 8px;font-size:10px">HOJE</button>
+  </div>
 </div>
 
 <div class="filters">
@@ -131,24 +150,21 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
     <div class="resumo-hdr"><span style="font-size:16px">📊</span><span class="resumo-t">Resumo do dia — Carpinski LTD</span></div>
     <div class="resumo-c" id="resumoC"></div>
   </div>
-
   <div id="errBox" class="errbox"></div>
-
   <div id="loading" class="loading">
     <div class="spinner"></div>
-    <div class="ltxt">Buscando jogos e odds do dia...</div>
-    <div class="lsub">API BSD · Dados em tempo real</div>
+    <div class="ltxt">Buscando jogos e dados...</div>
+    <div class="lsub">BSD Sports API · Dados em tempo real</div>
     <div class="lsteps">
-      <div class="lstep" id="s1">⏳ Buscando jogos de hoje...</div>
-      <div class="lstep" id="s2">⏳ Carregando odds de cada jogo...</div>
-      <div class="lstep" id="s3">⏳ Aplicando filtros LTD...</div>
-      <div class="lstep" id="s4">⏳ Gerando análise...</div>
+      <div class="lstep" id="s1">⏳ Buscando jogos do dia...</div>
+      <div class="lstep" id="s2">⏳ Carregando odds...</div>
+      <div class="lstep" id="s3">⏳ Buscando xG e forma dos times...</div>
+      <div class="lstep" id="s4">⏳ Aplicando filtros LTD...</div>
     </div>
   </div>
-
   <div id="gamesSec" class="games-sec">
     <div class="sec-hdr">
-      <span class="sec-t">Jogos de hoje</span>
+      <span class="sec-t" id="secTitle">Jogos</span>
       <span class="sec-c" id="gCount"></span>
     </div>
     <div id="gList"></div>
@@ -157,11 +173,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:1
       <div class="ts" id="ts"></div>
     </div>
   </div>
-
   <div id="empty" class="empty">
     <div style="font-size:32px;margin-bottom:12px">🔍</div>
     <div style="font-size:13px;color:var(--text);margin-bottom:6px">Nenhum jogo nessa categoria</div>
-    <div style="font-size:11px">Tente outro filtro</div>
+    <div style="font-size:11px">Tente outro filtro ou outra data</div>
   </div>
 </div>
 
@@ -175,10 +190,28 @@ const API_KEY = 'f02b283f9f7129b92408f3faf1664a37b286271c';
 const BASE = 'https://sports.bzzoiro.com';
 let all = [], cf = 'all';
 
+// Init date picker
+const dp = document.getElementById('datePicker');
 const today = new Date();
-document.getElementById('sD').textContent = today.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'});
+dp.value = today.toISOString().split('T')[0];
 
-function step(n, done){
+function getSelectedDate(){
+  return dp.value || today.toISOString().split('T')[0];
+}
+
+function changeDate(delta){
+  const d = new Date(dp.value+'T12:00:00');
+  d.setDate(d.getDate()+delta);
+  dp.value = d.toISOString().split('T')[0];
+  init();
+}
+
+function goToday(){
+  dp.value = today.toISOString().split('T')[0];
+  init();
+}
+
+function step(n){
   for(let i=1;i<=4;i++){
     const el=document.getElementById('s'+i);
     if(i<n) el.className='lstep done';
@@ -188,14 +221,18 @@ function step(n, done){
 }
 
 async function apiFetch(url){
-  const r = await fetch(BASE+url, {
-    headers:{'Authorization':'Token '+API_KEY}
-  });
-  if(!r.ok) throw new Error('API erro '+r.status);
+  const r = await fetch(BASE+url,{headers:{'Authorization':'Token '+API_KEY}});
+  if(!r.ok) throw new Error('API erro '+r.status+' em '+url);
   return r.json();
 }
 
 async function init(){
+  const dateStr = getSelectedDate();
+  const selDate = new Date(dateStr+'T12:00:00');
+  const isToday = dateStr === today.toISOString().split('T')[0];
+  const isPast = selDate < today;
+  const isFuture = selDate > today;
+
   document.getElementById('loading').style.display='block';
   document.getElementById('gamesSec').style.display='none';
   document.getElementById('resumoBox').style.display='none';
@@ -204,135 +241,153 @@ async function init(){
   document.getElementById('sA').textContent='—';
   document.getElementById('sW').textContent='—';
   document.getElementById('sT').textContent='—';
+
+  const dateLbl = selDate.toLocaleDateString('pt-BR',{weekday:'short',day:'2-digit',month:'2-digit'});
+  document.getElementById('secTitle').textContent = isToday?'Jogos de hoje — '+dateLbl:isPast?'Jogos de '+dateLbl:'Jogos de '+dateLbl;
   all=[];
 
   try {
-    // Step 1: buscar jogos de hoje
     step(1);
-    const dateStr = today.toISOString().split('T')[0];
-    const events = await apiFetch('/api/events/?date='+dateStr+'&page_size=50');
+    const events = await apiFetch('/api/events/?date='+dateStr+'&page_size=60');
     const jogos = events.results || events || [];
 
     step(2);
-    // Step 2: para cada jogo pegar odds
     const processados = [];
-    for(const ev of jogos.slice(0,30)){
+
+    for(const ev of jogos.slice(0,25)){
       try {
-        // Extrair dados do evento
-        const home = ev.home_team || ev.home || '?';
-        const away = ev.away_team || ev.away || '?';
+        const home = ev.home_team || '?';
+        const away = ev.away_team || '?';
         const league = ev.league?.name || ev.competition || 'Liga';
         const startTime = ev.kickoff || ev.date || ev.start;
         const hrBrasil = startTime ? new Date(startTime).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'}) : '—';
 
-        // Odds direto do evento (BSD inclui no mesmo endpoint)
-        const oddDraw = parseFloat(ev.odds_draw || ev.draw_odds || 0);
-        const oddOver25 = parseFloat(ev.odds_over_25 || ev.over25 || 0);
-        const oddHome = parseFloat(ev.odds_home || 0);
-        const oddAway = parseFloat(ev.odds_away || 0);
+        // Odds
+        const oddDraw = parseFloat(ev.odds_draw||0);
+        const oddOver25 = parseFloat(ev.odds_over_25||ev.over25||0);
+        const oddHome = parseFloat(ev.odds_home||0);
+        const oddAway = parseFloat(ev.odds_away||0);
 
-        // Jogadores indisponíveis
+        // xG e stats do coach
+        const homeCoach = ev.home_coach || {};
+        const awayCoach = ev.away_coach || {};
+        const homeXg = parseFloat(homeCoach.avg_xg_for||0).toFixed(2);
+        const awayXg = parseFloat(awayCoach.avg_xg_for||0).toFixed(2);
+        const homeGoals = parseFloat(homeCoach.avg_goals_for||0).toFixed(1);
+        const awayGoals = parseFloat(awayCoach.avg_goals_for||0).toFixed(1);
+        const homeWinRate = homeCoach.win_rate ? Math.round(homeCoach.win_rate*100)+'%' : '—';
+        const awayWinRate = awayCoach.win_rate ? Math.round(awayCoach.win_rate*100)+'%' : '—';
+
+        // Desfalques
         const unavailable = ev.unavailable_players || {};
-        const homeInj = (unavailable.home||[]).slice(0,3).map(p=>p.name||p).join(', ');
-        const awayInj = (unavailable.away||[]).slice(0,3).map(p=>p.name||p).join(', ');
+        const homeInj = (unavailable.home||[]).slice(0,3).map(p=>p.name||p).filter(Boolean);
+        const awayInj = (unavailable.away||[]).slice(0,3).map(p=>p.name||p).filter(Boolean);
 
-        // Aplicar critérios LTD
-        const oddOk = oddDraw >= 3.0 && oddDraw <= 4.5;
-        const over25Ok = oddOver25 > 0 && oddOver25 < 2.0;
+        // Previsão ML
+        const pred = ev.prediction || {};
+        const probHome = pred.home ? Math.round(pred.home*100) : null;
+        const probDraw = pred.draw ? Math.round(pred.draw*100) : null;
+        const probAway = pred.away ? Math.round(pred.away*100) : null;
+        const predOver25 = pred.over_25 ? Math.round(pred.over_25*100) : null;
+
+        // Critérios LTD
+        const oddOk = oddDraw>=3.0 && oddDraw<=4.5;
+        const over25Ok = oddOver25>0 && oddOver25<2.0;
+        const xgOk = (parseFloat(homeXg)+parseFloat(awayXg))>=2.0;
+        const goalsOk = (parseFloat(homeGoals)+parseFloat(awayGoals))>=2.0;
 
         let score = 0;
-        if(oddOk) score += 40;
-        if(over25Ok) score += 35;
-        if(oddDraw > 0) score += 10;
-        if(oddOver25 > 0) score += 15;
+        if(oddOk) score+=35;
+        if(over25Ok) score+=30;
+        if(xgOk) score+=15;
+        if(goalsOk) score+=10;
+        if(predOver25&&predOver25>=60) score+=10;
 
-        let verdict = 'SKIP';
-        if(oddOk && over25Ok) verdict = 'GO';
-        else if(oddOk || over25Ok) verdict = 'WATCH';
-        else if(oddDraw === 0) verdict = 'WATCH'; // sem odds ainda
+        let verdict='SKIP';
+        if(oddOk&&over25Ok) verdict='GO';
+        else if(oddOk||over25Ok) verdict='WATCH';
+        else if(oddDraw===0) verdict='WATCH';
 
-        let analise = '';
+        // Análise
+        let analise='';
         if(verdict==='GO'){
-          analise = `✅ Jogo passa em todos os critérios LTD! Odd empate ${oddDraw.toFixed(2)} (faixa 3.0–4.5) e Over 2.5 @${oddOver25.toFixed(2)}. Entrada recomendada pré-live.`;
-        } else if(oddOk && !over25Ok && oddOver25>0){
-          analise = `⚠️ Odd empate ok (${oddDraw.toFixed(2)}), mas Over 2.5 @${oddOver25.toFixed(2)} indica jogo mais fechado. Acompanhe os primeiros minutos.`;
-        } else if(!oddOk && over25Ok){
-          analise = `⚠️ Over 2.5 favorável @${oddOver25.toFixed(2)}, mas odd empate ${oddDraw.toFixed(2)} fora da faixa ideal 3.0–4.5.`;
+          analise=`✅ Passa em todos os critérios LTD! Odd empate ${oddDraw.toFixed(2)}, Over 2.5 @${oddOver25.toFixed(2)}.${predOver25?` Modelo ML indica ${predOver25}% de chance de +2.5 gols.`:''} Entrada recomendada.`;
+        } else if(oddOk&&!over25Ok&&oddOver25>0){
+          analise=`⚠️ Odd empate ok (${oddDraw.toFixed(2)}), mas Over 2.5 @${oddOver25.toFixed(2)} sugere jogo mais fechado. Observe os primeiros 15 min ao vivo.`;
+        } else if(!oddOk&&over25Ok){
+          analise=`⚠️ Over 2.5 favorável @${oddOver25.toFixed(2)}, mas odd empate ${oddDraw.toFixed(2)} fora da faixa 3.0–4.5. ${oddDraw<3.0?'Exposição alta — cuidado.':'Empate já precificado como improvável.'}`;
         } else if(oddDraw===0){
-          analise = `⏳ Odds ainda não disponíveis para este jogo. Verifique mais próximo do horário.`;
+          analise=`⏳ Odds ainda não disponíveis. Verifique mais próximo do horário do jogo.`;
         } else {
-          analise = `❌ Não passa nos critérios. Odd empate ${oddDraw.toFixed(2)}, Over 2.5 @${oddOver25.toFixed(2)||'—'}. Pular.`;
+          analise=`❌ Não passa nos critérios LTD. Odd empate ${oddDraw.toFixed(2)}, Over 2.5 @${oddOver25||'—'}. Pular.`;
         }
 
         processados.push({
-          home, away, league, hrBrasil,
-          oddDraw: oddDraw>0 ? oddDraw.toFixed(2) : '—',
-          oddOver25: oddOver25>0 ? oddOver25.toFixed(2) : '—',
-          oddHome: oddHome>0 ? oddHome.toFixed(2) : '—',
-          oddAway: oddAway>0 ? oddAway.toFixed(2) : '—',
-          homeInj, awayInj,
-          verdict, score, analise,
-          criterios:{odd_ok:oddOk, over25_ok:over25Ok}
+          home,away,league,hrBrasil,
+          oddDraw:oddDraw>0?oddDraw.toFixed(2):'—',
+          oddOver25:oddOver25>0?oddOver25.toFixed(2):'—',
+          oddHome:oddHome>0?oddHome.toFixed(2):'—',
+          oddAway:oddAway>0?oddAway.toFixed(2):'—',
+          homeXg,awayXg,homeGoals,awayGoals,
+          homeWinRate,awayWinRate,
+          homeInj,awayInj,
+          probHome,probDraw,probAway,predOver25,
+          verdict,score,analise,
+          criterios:{odd_ok:oddOk,over25_ok:over25Ok,xg_ok:xgOk}
         });
       } catch(e){ continue; }
     }
 
-    all = processados;
     step(3);
-
-    // Stats
-    const go = all.filter(g=>g.verdict==='GO').length;
-    const watch = all.filter(g=>g.verdict==='WATCH').length;
-    document.getElementById('sA').textContent = go;
-    document.getElementById('sW').textContent = watch;
-    document.getElementById('sT').textContent = all.length;
-
+    all = processados;
     step(4);
 
-    // Resumo
-    const rb = document.getElementById('resumoBox');
-    const rc = document.getElementById('resumoC');
-    rb.style.display = 'block';
-    if(go > 0){
-      const best = all.filter(g=>g.verdict==='GO').sort((a,b)=>b.score-a.score)[0];
-      rc.innerHTML = `<strong>${go} jogo(s) aprovado(s)</strong> para LTD hoje, ${watch} para observar. Destaque: <strong>${best.home} × ${best.away}</strong> — odd empate ${best.oddDraw}, Over 2.5 @${best.oddOver25}. Score ${best.score}/100.`;
-    } else if(watch > 0){
-      rc.innerHTML = `Nenhum jogo com <strong>todos os critérios</strong> hoje. ${watch} para observar — acompanhe ao vivo antes de entrar.`;
-    } else if(all.length === 0){
-      rc.innerHTML = `Nenhum jogo encontrado para hoje nas ligas monitoradas.`;
+    const go=all.filter(g=>g.verdict==='GO').length;
+    const watch=all.filter(g=>g.verdict==='WATCH').length;
+    document.getElementById('sA').textContent=go;
+    document.getElementById('sW').textContent=watch;
+    document.getElementById('sT').textContent=all.length;
+
+    const rb=document.getElementById('resumoBox');
+    const rc=document.getElementById('resumoC');
+    rb.style.display='block';
+    if(go>0){
+      const best=all.filter(g=>g.verdict==='GO').sort((a,b)=>b.score-a.score)[0];
+      rc.innerHTML=`<strong>${go} jogo(s) aprovado(s)</strong> para LTD em ${dateLbl}. Destaque: <strong>${best.home} × ${best.away}</strong> — odd empate ${best.oddDraw}, Over 2.5 @${best.oddOver25}. Score ${best.score}/100.`;
+    } else if(all.length===0){
+      rc.innerHTML=`Nenhum jogo encontrado para ${dateLbl}. Tente outra data.`;
     } else {
-      rc.innerHTML = `${all.length} jogos analisados. Nenhum passa nos critérios LTD hoje — melhor não operar.`;
+      rc.innerHTML=`${all.length} jogos em ${dateLbl}. ${watch>0?watch+' para observar ao vivo —':''} Nenhum passa em todos os critérios LTD.`;
     }
 
-    document.getElementById('ts').textContent = 'Atualizado às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-    document.getElementById('loading').style.display = 'none';
+    document.getElementById('ts').textContent='Atualizado às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+    document.getElementById('loading').style.display='none';
     renderFiltered();
 
   } catch(err){
-    document.getElementById('loading').style.display = 'none';
-    const eb = document.getElementById('errBox');
-    eb.style.display = 'block';
-    eb.innerHTML = `<strong>Erro ao buscar dados:</strong> ${err.message}<br><br>
-      <small>Verifique sua conexão ou tente novamente em alguns instantes.</small><br><br>
+    document.getElementById('loading').style.display='none';
+    const eb=document.getElementById('errBox');
+    eb.style.display='block';
+    eb.innerHTML=`<strong>Erro:</strong> ${err.message}<br><br>
       <button onclick="init()" style="background:transparent;border:1px solid var(--amber);color:var(--amber);padding:5px 12px;border-radius:6px;cursor:pointer;font-size:11px;font-family:var(--font);">🔄 Tentar novamente</button>`;
   }
 }
 
-function filt(f, btn){
-  cf = f;
+function filt(f,btn){
+  cf=f;
   document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   renderFiltered();
 }
 
 function renderFiltered(){
-  let g = all;
-  if(cf==='go') g = all.filter(x=>x.verdict==='GO');
-  if(cf==='watch') g = all.filter(x=>x.verdict==='WATCH');
-  if(cf==='skip') g = all.filter(x=>x.verdict==='SKIP');
-  g = [...g].sort((a,b)=>b.score-a.score);
+  let g=all;
+  if(cf==='go') g=all.filter(x=>x.verdict==='GO');
+  if(cf==='watch') g=all.filter(x=>x.verdict==='WATCH');
+  if(cf==='skip') g=all.filter(x=>x.verdict==='SKIP');
+  g=[...g].sort((a,b)=>b.score-a.score);
 
-  document.getElementById('gCount').textContent = `${g.length} jogo${g.length!==1?'s':''}`;
+  document.getElementById('gCount').textContent=`${g.length} jogo${g.length!==1?'s':''}`;
 
   if(g.length===0){
     document.getElementById('gamesSec').style.display='none';
@@ -342,22 +397,55 @@ function renderFiltered(){
   document.getElementById('empty').style.display='none';
   document.getElementById('gamesSec').style.display='block';
 
-  const list = document.getElementById('gList');
-  list.innerHTML = '';
+  const list=document.getElementById('gList');
+  list.innerHTML='';
 
   g.forEach(x=>{
-    const cc = x.verdict==='GO'?'go':x.verdict==='WATCH'?'watch':'skip';
-    const bc = x.verdict==='GO'?'vgo':x.verdict==='WATCH'?'vwa':'vsk';
-    const bt = x.verdict==='GO'?'✅ ENTRAR':x.verdict==='WATCH'?'⚠️ OBSERVAR':'❌ PULAR';
-    const sc = (x.score||0)>=75?'var(--green)':(x.score||0)>=50?'var(--amber)':'var(--red)';
-    const c = x.criterios||{};
+    const cc=x.verdict==='GO'?'go':x.verdict==='WATCH'?'watch':'skip';
+    const bc=x.verdict==='GO'?'vgo':x.verdict==='WATCH'?'vwa':'vsk';
+    const bt=x.verdict==='GO'?'✅ ENTRAR':x.verdict==='WATCH'?'⚠️ OBSERVAR':'❌ PULAR';
+    const sc=(x.score||0)>=75?'var(--green)':(x.score||0)>=50?'var(--amber)':'var(--red)';
+    const c=x.criterios||{};
 
-    const crits = [
-      {ok:c.odd_ok, l:`Odd empate ${x.oddDraw}`},
-      {ok:c.over25_ok, l:`Over 2.5 @${x.oddOver25}`},
+    const crits=[
+      {ok:c.odd_ok,l:`Empate ${x.oddDraw}`},
+      {ok:c.over25_ok,l:`Over2.5 @${x.oddOver25}`},
+      {ok:c.xg_ok,l:`xG ${(parseFloat(x.homeXg||0)+parseFloat(x.awayXg||0)).toFixed(1)}`},
     ].map(cr=>`<div class="crit ${cr.ok===true?'ok':cr.ok===false?'no':'wa'}">${cr.ok===true?'✓':cr.ok===false?'✗':'~'} ${cr.l}</div>`).join('');
 
-    list.innerHTML += `
+    const mlRow = (x.probHome||x.probDraw||x.probAway) ? `
+    <div class="extra-info">
+      <div class="ei-box">
+        <div class="ei-lbl">🤖 ML — Probabilidades</div>
+        <div class="ei-val">${x.home}: ${x.probHome??'—'}% · Empate: ${x.probDraw??'—'}% · ${x.away}: ${x.probAway??'—'}%</div>
+      </div>
+      <div class="ei-box">
+        <div class="ei-lbl">📈 Over 2.5 (ML)</div>
+        <div class="ei-val" style="color:${x.predOver25>=60?'var(--green)':x.predOver25>=45?'var(--amber)':'var(--red)'}">${x.predOver25??'—'}% probabilidade</div>
+      </div>
+    </div>` : '';
+
+    const statsRow = (x.homeGoals!=='0.0'||x.awayGoals!=='0.0') ? `
+    <div class="extra-info">
+      <div class="ei-box">
+        <div class="ei-lbl">⚽ Média de gols</div>
+        <div class="ei-val">${x.home}: ${x.homeGoals} gols/jogo · ${x.away}: ${x.awayGoals} gols/jogo</div>
+      </div>
+      <div class="ei-box">
+        <div class="ei-lbl">🎯 xG médio</div>
+        <div class="ei-val">${x.home}: ${x.homeXg} · ${x.away}: ${x.awayXg}</div>
+      </div>
+    </div>` : '';
+
+    const injRow = (x.homeInj.length||x.awayInj.length) ? `
+    <div class="inj-box">
+      🚑 <strong style="color:var(--red)">Desfalques:</strong>
+      ${x.homeInj.length?x.home+': '+x.homeInj.join(', '):''}
+      ${x.homeInj.length&&x.awayInj.length?' · ':''}
+      ${x.awayInj.length?x.away+': '+x.awayInj.join(', '):''}
+    </div>` : '';
+
+    list.innerHTML+=`
     <div class="gc ${cc}">
       <div class="ct">
         <div class="lgi"><span class="lgn">🏆 ${x.league}</span></div>
@@ -372,29 +460,22 @@ function renderFiltered(){
       </div>
       <div class="mets">
         <div class="mb ${c.odd_ok===true?'pass':c.odd_ok===false?'fail':'warn'}">
-          <div class="mbl">Odd empate</div>
-          <div class="mbv">${x.oddDraw}</div>
+          <div class="mbl">Odd empate</div><div class="mbv">${x.oddDraw}</div>
         </div>
         <div class="mb ${c.over25_ok===true?'pass':c.over25_ok===false?'fail':'warn'}">
-          <div class="mbl">Over 2.5</div>
-          <div class="mbv">@${x.oddOver25}</div>
+          <div class="mbl">Over 2.5</div><div class="mbv">@${x.oddOver25}</div>
         </div>
         <div class="mb">
-          <div class="mbl">Casa / Fora</div>
-          <div class="mbv" style="font-size:11px">${x.oddHome} / ${x.oddAway}</div>
+          <div class="mbl">Casa / Fora</div><div class="mbv" style="font-size:11px">${x.oddHome} / ${x.oddAway}</div>
         </div>
         <div class="mb ${x.score>=75?'pass':x.score>=50?'warn':'fail'}">
-          <div class="mbl">LTD Score</div>
-          <div class="mbv">${x.score}/100</div>
+          <div class="mbl">LTD Score</div><div class="mbv">${x.score}/100</div>
         </div>
       </div>
       <div class="crits">${crits}</div>
-      ${x.homeInj||x.awayInj ? `
-      <div style="padding:0 14px 10px;font-size:10px;color:var(--t3)">
-        ${x.homeInj?`🚑 ${x.home}: ${x.homeInj}`:''}
-        ${x.homeInj&&x.awayInj?' · ':''}
-        ${x.awayInj?`🚑 ${x.away}: ${x.awayInj}`:''}
-      </div>`:''}
+      ${mlRow}
+      ${statsRow}
+      ${injRow}
       <div class="anal"><strong>Análise:</strong> ${x.analise}</div>
     </div>`;
   });
