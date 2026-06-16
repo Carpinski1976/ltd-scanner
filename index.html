@@ -351,22 +351,32 @@ function getLeagueGamesForDate(league, date){
   if(d < start || d > end) return [];
   if(!league.days.includes(dow)) return [];
 
-  // Gera 2-3 jogos para o dia usando os times da lista (rotação simples por semana)
-  const weekNum = Math.floor((d-start)/(7*24*3600*1000));
-  const teams = league.teams;
+  const teams = [...league.teams];
+  if(teams.length < 2) return [];
+
+  // Rotação baseada no dia do ano para variar os confrontos
+  const dayOfYear = Math.floor((d - new Date(d.getFullYear(),0,1)) / 86400000);
+  const offset = (dayOfYear * 3) % teams.length;
+
+  // Embaralha times com base no offset do dia
+  const shuffled = [];
+  for(let i=0;i<teams.length;i++){
+    shuffled.push(teams[(i+offset)%teams.length]);
+  }
+
   const games = [];
-  const numGames = Math.min(3, Math.floor(teams.length/2));
+  const numGames = Math.min(3, Math.floor(shuffled.length/2));
   const hours = ['13:00','16:00','19:00'];
 
   for(let i=0;i<numGames;i++){
-    const hi = (weekNum*6 + i*2) % teams.length;
-    const ai = (weekNum*6 + i*2 + 1) % teams.length;
-    if(hi===ai) continue;
+    const home = shuffled[i*2];
+    const away = shuffled[i*2+1];
+    if(!home || !away || home===away) continue;
     games.push({
       d: ds,
       t: hours[i]||'16:00',
-      h: teams[hi],
-      a: teams[ai],
+      h: home,
+      a: away,
       l: league.name,
       div: league.div
     });
